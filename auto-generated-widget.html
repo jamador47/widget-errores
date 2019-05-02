@@ -86,6 +86,8 @@ box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, red 0 2
     </style>
 
     <script type='text/javascript'>
+        
+        this.getjson();
     //<![CDATA[
 /* global requirejs cprequire cpdefine chilipeppr THREE */
 // Defining the globals above helps Cloud9 not show warnings for those variables
@@ -413,7 +415,7 @@ var HttpClient = function() {
                                          //        again after a 4 second delay
     });
            
-           setTimeout( this.getjson, 4000 )
+           setTimeout( this.getjson(), 4000 )
 },
 
         
@@ -493,7 +495,7 @@ var HttpClient = function() {
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v1</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v3</span>
 
         </div>
         <div class="panel-body">
