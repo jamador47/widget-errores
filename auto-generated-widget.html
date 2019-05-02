@@ -87,7 +87,6 @@ box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, red 0 2
 
     <script type='text/javascript'>
         
-    
     //<![CDATA[
 /* global requirejs cprequire cpdefine chilipeppr THREE */
 // Defining the globals above helps Cloud9 not show warnings for those variables
@@ -270,7 +269,14 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
             $('#' + this.id + ' .btn-sayhello').click(function() {
                 console.log("saying hello");
                 // Make sure popover is immediately hidden
-                this.getjson();
+                $('#' + that.id + ' .btn-sayhello').popover("hide");
+                // Show a flash msg
+                chilipeppr.publish(
+                    "/com-chilipeppr-elem-flashmsg/flashmsg",
+                    "Hello Title",
+                    "Hello World from widget " + that.id,
+                    1000
+                );
             });
 
             // Init Hello World 2 button on Tab 1. Notice the use
@@ -488,7 +494,7 @@ var HttpClient = function() {
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v3</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v4</span>
 
         </div>
         <div class="panel-body">
