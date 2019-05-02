@@ -230,31 +230,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
             console.log("I am done being initted.");
         },
         
-        getjson: function () {
-           
-var HttpClient = function() {
-                  this.get = function(aUrl, aCallback) {
-                      var anHttpRequest = new XMLHttpRequest();
-                      anHttpRequest.onreadystatechange = function() {
-                          if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                              aCallback(anHttpRequest.responseText);
-                      }
-                      anHttpRequest.open("GET", aUrl, true);
-                      anHttpRequest.send(null);
-                  }
-              }
-              var theurl = 'http://localhost:8000/api/estados';
-              var client = new HttpClient();
-              client.get(theurl, function(response) {
-    var obj = JSON.parse(response);
-           alert(obj['dx1']);
-           
-         // <-- when you ge a response, call it
-                                         //        again after a 4 second delay
-    });
-           
-           setTimeout( this.getjson(), 4000 )
-},
+        
         /**
          * Call this method from init to setup all the buttons when this widget
          * is first loaded. This basically attaches click events to your 
@@ -469,9 +445,39 @@ var HttpClient = function() {
             });
 
         },
+        
+                getjson: function() {
+           
+var HttpClient = function() {
+                  this.get = function(aUrl, aCallback) {
+                      var anHttpRequest = new XMLHttpRequest();
+                      anHttpRequest.onreadystatechange = function() {
+                          if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                              aCallback(anHttpRequest.responseText);
+                      }
+                      anHttpRequest.open("GET", aUrl, true);
+                      anHttpRequest.send(null);
+                  }
+              }
+              var theurl = 'http://localhost:8000/api/estados';
+              var client = new HttpClient();
+              client.get(theurl, function(response) {
+    var obj = JSON.parse(response);
+           alert(obj['dx1']);
+           
+         // <-- when you ge a response, call it
+                                         //        again after a 4 second delay
+    });
+           
+           setTimeout( this.getjson(), 4000 )
+},
 
-    }
-});
+    },
+        
+
+},
+        
+        );
     //]]>
     </script>
 
