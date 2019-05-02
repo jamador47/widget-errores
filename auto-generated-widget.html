@@ -469,15 +469,29 @@ var HttpClient = function() {
            
                   
                   
+                  //if (obj['O'][1] == )
+                  // if (obj['I']["1"] == )
                   
+                  
+                  if (obj['I']["5"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
 
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
 
-                                    alarmasexistentes = alarmasexistentes.concat(obj['I']["1"]);
+                                    alarmasexistentes = alarmasexistentes.concat("I.5 Máquina Apagada");
 
                                     document.getElementById("textoalarmas").value = alarmasexistentes;
+                   $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
+                      }
+                  
+                  
+                  if (obj['I']["5"] == 1 && ){
+                      
+                      ocument.getElementById("indicadoralarma").className = "led-off";
+                   $('#com-chilipeppr-widget-gcode-play').prop("disabled", false);
+                      
+                      }
            
          // <-- when you ge a response, call it
                                          //        again after a 4 second delay
@@ -515,7 +529,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v1.55</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v1.65</span>
 
         </div>
         <div class="panel-body">
