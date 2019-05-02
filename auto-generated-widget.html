@@ -468,12 +468,14 @@ var HttpClient = function() {
     var obj = JSON.parse(response);
            
                   
+                  
+                  
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
 
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
 
-                                    alarmasexistentes = alarmasexistentes.concat(obj['dx1']);
+                                    alarmasexistentes = alarmasexistentes.concat(obj['O'][1]);
 
                                     document.getElementById("textoalarmas").value = alarmasexistentes;
            
@@ -513,7 +515,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v25</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v1.0</span>
 
         </div>
         <div class="panel-body">
