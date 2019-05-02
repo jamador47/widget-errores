@@ -409,7 +409,16 @@ var HttpClient = function() {
               var client = new HttpClient();
               client.get(theurl, function(response) {
     var obj = JSON.parse(response);
-           alert(obj['dx1']);
+           
+                  
+                    var alarmasexistentes = document.getElementById("textoalarmas").value;
+
+                                    document.getElementById("indicadoralarma").className = "led-yellow";
+                                    alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
+
+                                    alarmasexistentes = alarmasexistentes.concat(obj['dx1']);
+
+                                    document.getElementById("textoalarmas").value = alarmasexistentes;
            
          // <-- when you ge a response, call it
                                          //        again after a 4 second delay
@@ -495,7 +504,7 @@ var HttpClient = function() {
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v12</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v15</span>
 
         </div>
         <div class="panel-body">
