@@ -278,7 +278,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
                 );
             });
             
-            this.getjson();
+            
 
             // Init Hello World 2 button on Tab 1. Notice the use
             // of the slick .bind(this) technique to correctly set "this"
@@ -394,6 +394,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
         
        getjson: function() {
            
+           
 var HttpClient = function() {
                   this.get = function(aUrl, aCallback) {
                       var anHttpRequest = new XMLHttpRequest();
@@ -478,6 +479,11 @@ var HttpClient = function() {
 
     }
 });
+        
+        
+        window.setInterval(function(){
+this.getjson();
+}, 5000);
     //]]>
     </script>
 
@@ -503,7 +509,7 @@ var HttpClient = function() {
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v18</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v20</span>
 
         </div>
         <div class="panel-body">
