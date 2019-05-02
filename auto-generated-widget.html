@@ -392,40 +392,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
          */
         
         
-       getjson: function() {
-           
-           
-var HttpClient = function() {
-                  this.get = function(aUrl, aCallback) {
-                      var anHttpRequest = new XMLHttpRequest();
-                      anHttpRequest.onreadystatechange = function() {
-                          if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                              aCallback(anHttpRequest.responseText);
-                      }
-                      anHttpRequest.open("GET", aUrl, true);
-                      anHttpRequest.send(null);
-                  }
-              }
-              var theurl = 'http://localhost:8000/api/estados';
-              var client = new HttpClient();
-              client.get(theurl, function(response) {
-    var obj = JSON.parse(response);
-           
-                  
-                    var alarmasexistentes = document.getElementById("textoalarmas").value;
-
-                                    document.getElementById("indicadoralarma").className = "led-yellow";
-                                    alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
-
-                                    alarmasexistentes = alarmasexistentes.concat(obj['dx1']);
-
-                                    document.getElementById("textoalarmas").value = alarmasexistentes;
-           
-         // <-- when you ge a response, call it
-                                         //        again after a 4 second delay
-    });
-           
-},
+       
 
         
         
@@ -481,9 +448,46 @@ var HttpClient = function() {
 });
         
         
+         function getjson() {
+           
+           
+var HttpClient = function() {
+                  this.get = function(aUrl, aCallback) {
+                      var anHttpRequest = new XMLHttpRequest();
+                      anHttpRequest.onreadystatechange = function() {
+                          if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                              aCallback(anHttpRequest.responseText);
+                      }
+                      anHttpRequest.open("GET", aUrl, true);
+                      anHttpRequest.send(null);
+                  }
+              }
+              var theurl = 'http://localhost:8000/api/estados';
+              var client = new HttpClient();
+              client.get(theurl, function(response) {
+    var obj = JSON.parse(response);
+           
+                  
+                    var alarmasexistentes = document.getElementById("textoalarmas").value;
+
+                                    document.getElementById("indicadoralarma").className = "led-yellow";
+                                    alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
+
+                                    alarmasexistentes = alarmasexistentes.concat(obj['dx1']);
+
+                                    document.getElementById("textoalarmas").value = alarmasexistentes;
+           
+         // <-- when you ge a response, call it
+                                         //        again after a 4 second delay
+    });
+           
+}
+        
         window.setInterval(function(){
 this.getjson();
 }, 5000);
+        
+        
     //]]>
     </script>
 
@@ -509,7 +513,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v20</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v25</span>
 
         </div>
         <div class="panel-body">
