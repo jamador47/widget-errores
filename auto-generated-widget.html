@@ -596,6 +596,19 @@ var HttpClient = function() {
                       }
                   
                   
+                                           if (obj['O']["343"] == 0){
+                    var alarmasexistentes = document.getElementById("textoalarmas").value;
+
+                                    document.getElementById("indicadoralarma").className = "led-yellow";
+                                    alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
+
+                                    alarmasexistentes = alarmasexistentes.concat("O343 RUN DESHABILITADO");
+
+                                    document.getElementById("textoalarmas").value = alarmasexistentes;
+                   $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
+                      }
+                  
+                  
                   
                              if (obj['I']["22"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
@@ -624,6 +637,7 @@ var HttpClient = function() {
                   
                   
                   
+                   /* 
                   
                           if (obj['I']["326"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
@@ -678,7 +692,7 @@ var HttpClient = function() {
                   if (obj['I']["389"] < 10){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
 
-                                    document.getElementById("indicadoralarma").className = "led-yellow";
+                                  document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
 
                                     alarmasexistentes = alarmasexistentes.concat("I.389 ERROR");
@@ -848,9 +862,9 @@ var HttpClient = function() {
 
                                     document.getElementById("textoalarmas").value = alarmasexistentes;
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
-                      }
+                      }*/
                   
-                  if (obj['I']["5"] == 1 &&  obj['I']["21"] == 1 &&  obj['I']["18"] == 0 && obj['I']["10"] == 1 && obj['I']["11"] == 1  && obj['I']["1"] == 1 && obj['I']["29"] > 200 && obj['I']["396"] > 200  && obj['I']["387"] > 200 && obj['I']["353"] > 200 && obj['I']["405"] > 200 && obj['I']["397"] > 200 && obj['I']["389"] > 200 && obj['I']["434"] > 200 && obj['I']["407"] > 200 && obj['I']["416"] > 200 && obj['I']["341"] > 200 && obj['I']["436"] > 200 && obj['I']["354"] > 200  && obj['I']["28"] > 200  && obj['I']["2"] == 1 && obj['I']["22"] == 1 && obj['I']["8"] == 1 && obj['I']["326"] == 1 && obj['I']["378"] == 1 && obj['I']["370"] == 1 && obj['I']["379"] == 1 && obj['I']["426"] == 1 && obj['I']["328"] == 1 && obj['I']["368"] == 1 && obj['I']["424"] == 1){
+                  if (obj['I']["5"] == 1 &&  obj['I']["21"] == 1 &&  obj['I']["18"] == 0 && obj['I']["10"] == 1 && obj['I']["11"] == 1  && obj['I']["1"] == 1 && obj['I']["29"] > 200  && obj['I']["28"] > 200  && obj['I']["2"] == 1 && obj['I']["22"] == 1 && obj['I']["8"] == 1){
                       
                       
                       var alarmasexistentes = document.getElementById("textoalarmas").value;
