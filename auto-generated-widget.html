@@ -505,8 +505,8 @@ var HttpClient = function() {
                   
                                     if (obj['I']["18"] == 1){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
-                                        alert("JOJO");
                     var existentes =  alarmasexistentes.match(/I.18 No hay presión de aire/gi);
+                    alert(existentes);
                     if (existentes == NULL){
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
