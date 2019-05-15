@@ -477,7 +477,7 @@ var HttpClient = function() {
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
 
                    var existentes =  alarmasexistentes.match(/I.5 Máquina Apagada/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
 
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
@@ -506,8 +506,7 @@ var HttpClient = function() {
                                     if (obj['I']["18"] == 1){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
                     var existentes =  alarmasexistentes.match(/I.18 No hay presión de aire/gi);
-                    alert(existentes);
-                    if (existentes == NULL){
+                    if (existentes == 'null'){
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
 
@@ -521,7 +520,7 @@ var HttpClient = function() {
                             if (obj['I']["10"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
                     var existentes =  alarmasexistentes.match(/I.10 SETTING 1: ERROR/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
 
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
@@ -539,7 +538,7 @@ var HttpClient = function() {
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
 
                     var existentes =  alarmasexistentes.match(/I.11 EJE Z: ERROR/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
 
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
@@ -556,7 +555,7 @@ var HttpClient = function() {
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
 
                     var existentes =  alarmasexistentes.match(/I.1 pulsador de emergencia activado/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
 
@@ -570,7 +569,7 @@ var HttpClient = function() {
                                if (obj['I']["29"] < 10){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
                     var existentes =  alarmasexistentes.match(/I.29 ERROR/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
 
@@ -584,7 +583,7 @@ var HttpClient = function() {
                                if (obj['I']["28"] < 10){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
                     var existentes =  alarmasexistentes.match(/I.28 ERROR FRENO/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
 
@@ -597,7 +596,7 @@ var HttpClient = function() {
                           if (obj['I']["354"] < 10){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
                     var existentes =  alarmasexistentes.match(/I.354 ERROR/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
 
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
@@ -611,7 +610,7 @@ var HttpClient = function() {
                                              if (obj['I']["2"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
    var existentes =  alarmasexistentes.match(/I.2 Interruptores Termomagneticos Abiertos/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
 
@@ -626,7 +625,7 @@ var HttpClient = function() {
                                            if (obj['O']["343"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
                     var existentes =  alarmasexistentes.match(/O343 RUN DESHABILITADO/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
 
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
@@ -643,7 +642,7 @@ var HttpClient = function() {
                              if (obj['I']["22"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
    var existentes =  alarmasexistentes.match(/I.22: Circuito de emergencia abierto/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
 
@@ -657,7 +656,7 @@ var HttpClient = function() {
                                     if (obj['I']["8"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
                     var existentes =  alarmasexistentes.match(/I.8: husillo muy caliente/gi);
-                        if (existentes == NULL){
+                        if (existentes == 'null'){
 
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
