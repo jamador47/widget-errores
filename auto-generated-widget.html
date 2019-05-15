@@ -487,6 +487,13 @@ var HttpClient = function() {
                                     document.getElementById("textoalarmas").value = alarmasexistentes;
                                 }
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
+                      }else{
+
+                        var alarmasexistentes = document.getElementById("textoalarmas").value;
+                        alarmasexistentes = alarmasexistentes.replace("I.5 Máquina Apagada","");
+
+
+
                       }
                   
                   
@@ -516,6 +523,15 @@ var HttpClient = function() {
 
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.18 No hay presión de aire","");
+
+
+
+}
+
                   
                             if (obj['I']["10"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
@@ -533,6 +549,15 @@ var HttpClient = function() {
 
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.10 SETTING 1: ERROR","");
+
+
+
+}
+
                   
                                if (obj['I']["11"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
@@ -549,6 +574,15 @@ var HttpClient = function() {
                         }
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.11 EJE Z: ERROR","");
+
+
+
+}
+
                   
                   
                            if (obj['I']["1"] == 0){
@@ -565,6 +599,16 @@ var HttpClient = function() {
                         }
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
+
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.1 pulsador de emergencia activado","");
+
+
+
+}
+
                   
                                if (obj['I']["29"] < 10){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
@@ -579,6 +623,16 @@ var HttpClient = function() {
                         }
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
+
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.29 ERROR","");
+
+
+
+}
+
                   
                                if (obj['I']["28"] < 10){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
@@ -592,6 +646,15 @@ var HttpClient = function() {
                                     document.getElementById("textoalarmas").value = alarmasexistentes;}
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.28 ERROR FRENO","");
+
+
+
+}
+
                   
                           if (obj['I']["354"] < 10){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
@@ -607,6 +670,16 @@ var HttpClient = function() {
 
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
+
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.354 ERROR","");
+
+
+
+}
+
                                              if (obj['I']["2"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
    var existentes =  alarmasexistentes.match(/I.2 Interruptores Termomagneticos Abiertos/gi);
@@ -621,6 +694,15 @@ var HttpClient = function() {
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
                   
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.2 Interruptores Termomagneticos Abiertos","");
+
+
+
+}
+
                   
                                            if (obj['O']["343"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
@@ -637,6 +719,15 @@ var HttpClient = function() {
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
                   
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("O343 RUN DESHABILITADO","");
+
+
+
+}
+
                   
                   
                              if (obj['I']["22"] == 0){
@@ -652,6 +743,15 @@ var HttpClient = function() {
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
                   
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.22: Circuito de emergencia abierto","");
+
+
+
+}
+
                   
                                     if (obj['I']["8"] == 0){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
@@ -666,6 +766,15 @@ var HttpClient = function() {
                                     document.getElementById("textoalarmas").value = alarmasexistentes;}
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.8: husillo muy caliente","");
+
+
+
+}
+
                   
                   
                   
@@ -944,7 +1053,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v5.0B</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v5.1B</span>
 
         </div>
         <div class="panel-body">
