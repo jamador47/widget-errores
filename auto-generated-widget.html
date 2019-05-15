@@ -775,8 +775,35 @@ document.getElementById("textoalarmas").value = alarmasexistentes;
 
 }
 
-                  
-                  
+
+                    if (obj['O']["4"] == 0){  
+                        document.getElementById("indicadortaladro").className = "led-off";
+
+                    }
+                    else{
+
+                        document.getElementById("indicadoralarma").className = "led-green";
+
+                    }
+
+                    if (obj['O']["0"] == 0){  
+                        document.getElementById("indicadorhusillo").className = "led-off";
+
+                    }
+                    else{
+
+                        document.getElementById("indicadorhusillo").className = "led-green";
+
+                    }
+
+                    if (obj['I']["21"] == 1){  
+                        document.getElementById("indicadori21").className = "led-off";
+
+                    }
+                    else{
+
+                        document.getElementById("indicadori21").className = "led-yellow";
+                    }
                   
                    /* 
                   
