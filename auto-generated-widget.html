@@ -452,7 +452,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
              
              
              
-            chilipeppr.subscribe("/dev/ttyUSB0/ws/recv", this, function (msg) {
+            chilipeppr.subscribe("COM30/ws/recv", this, function (msg) {
             alert(this.onWsMessage(msg));
         });
              
@@ -1088,7 +1088,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v5.3B</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v5.3c</span>
 
         </div>
         <div class="panel-body">
