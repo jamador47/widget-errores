@@ -459,7 +459,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
                     console.log("it is json");
                     
                     var data = $.parseJSON(msg);
-                    //alert(data.D);
+                    alert(data.D);
                     if (this.portBoundTo && this.portBoundTo.Name && data.P && data.P == this.portBoundTo.Name) {
                         // this is our serial port data
                         var d = data.D;
