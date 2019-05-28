@@ -451,7 +451,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
          function getjson() {
              
              if (yaenhome == 0){
-             var serialPort = "COM30";
+             var serialPort = "/dev/ttyUSB0";
              var cmd  = "$homy";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);}
              
