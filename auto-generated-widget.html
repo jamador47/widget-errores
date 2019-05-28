@@ -449,10 +449,12 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
         
         
          function getjson() {
+             
+             if (yaenhome == 0){
              var serialPort = "COM30";
              var cmd  = "$homy";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-             alert(yaenhome);
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);}
+             
              
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
                 // make sure the data is for the port we're bound to
@@ -485,7 +487,8 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
                     }
                         if(data != undefined && data.match(/Y position:          1.000 mm\n/i)){
                         //alert(data);
-                                                             document.getElementById("indicadorhome").className = "led-off";
+                                                             yaenhome = 1;
+                            document.getElementById("indicadorhome").className = "led-off";
 
                                 
                                  $('#com-chilipeppr-widget-gcode-play').prop("disabled", false);
