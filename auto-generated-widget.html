@@ -91,7 +91,7 @@ box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, red 0 2
 // Defining the globals above helps Cloud9 not show warnings for those variables
 
 // ChiliPeppr Widget/Element Javascript
-
+var yaenhome = 0;
 requirejs.config({
     /*
     Dependencies can be defined here. ChiliPeppr uses require.js so
@@ -452,6 +452,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
              var serialPort = "COM30";
              var cmd  = "$homy";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+             alert(yaenhome);
              
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
                 // make sure the data is for the port we're bound to
@@ -482,7 +483,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
                             
                             
                     }
-                            if(data != undefined && data.match(/Y position: 1.000/i)){
+                        if(data != undefined && data.match(/Y position:          1.000 mm\n/i)){
                         //alert(data);
                                                              document.getElementById("indicadorhome").className = "led-off";
 
@@ -1136,7 +1137,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v5.5Z</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v5.5A/span>
 
         </div>
         <div class="panel-body">
