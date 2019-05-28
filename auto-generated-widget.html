@@ -449,8 +449,9 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
         
         
          function getjson() {
-             
-             
+             var serialport = "COM30";
+             var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
              
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
                 // make sure the data is for the port we're bound to
@@ -464,17 +465,40 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
                     if(data != undefined && data.match(/mpox/i)){
                         //alert(data);
                     }
-
-                    if (this.portBoundTo && this.portBoundTo.Name && data.P && data.P == this.portBoundTo.Name) {
-                        // this is our serial port data
-                        var d = data.D;
-                      // convert newlines
-                        //console.log("data before replace:", d);
-                        //d.replace(/\r\n|\r|\n/gm, "<br/>");
-                        //var spd = $("<div/>").text(data.D);
-                        //console.log("data after replace:", d);
-                      
+                        if(data != undefined && data.match(/Y position: 0.000/i)){
+                        //alert(data);
+                            
+                             document.getElementById("indicadorhome").className = "led-yellow";
+                             $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
+                             var cmd  = "$xvm=5000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$yvm=5000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$avm=5000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$zvm=1500";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                            
+                            
                     }
+                            if(data != undefined && data.match(/Y position: 1.000/i)){
+                        //alert(data);
+                                                             document.getElementById("indicadorhome").className = "led-off";
+
+                                
+                                 $('#com-chilipeppr-widget-gcode-play').prop("disabled", false);
+                               var cmd  = "$xvm=30000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$yvm=30000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$avm=30000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$zvm=5000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                    }
+                    
+                    
+
                 }
             });
        
