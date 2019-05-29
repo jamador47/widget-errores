@@ -92,6 +92,7 @@ box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, red 0 2
 
 // ChiliPeppr Widget/Element Javascript
 var yaenhome = 0;
+        var yaavisonohome =0;
 requirejs.config({
     /*
     Dependencies can be defined here. ChiliPeppr uses require.js so
@@ -450,7 +451,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
         
          function getjson() {
              
-             if (yaenhome == 0){
+             if (yaenhome == 0 &){
              var serialPort = "/dev/ttyUSB0";
              var cmd  = "$homy";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);}
@@ -472,6 +473,8 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
                         if(data != undefined && data.match(/Y position:          0.000 mm\n/i)){
                         //alert(data);
                             
+                            if (yaavisonohome == 0){
+                            yaavisonohome = 1;
                              document.getElementById("indicadorhome").className = "led-yellow";
                              $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                              var cmd  = "$xvm=5000";
@@ -482,7 +485,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
                              var cmd  = "$zvm=1500";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                            
+                  }          
                             
                     }
                         if(data != undefined && data.match(/Y position:          1.000 mm\n/i)){
