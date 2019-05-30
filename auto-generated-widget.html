@@ -505,15 +505,14 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
                                     }
                               yaenhome = 1;
+                              yaavisonohome = 0;
                     }
                     
                     
 
                 }
             });
-       
-             */
-             
+                    
              
            
 var HttpClient = function() {
@@ -1097,7 +1096,7 @@ document.getElementById("textoalarmas").value = alarmasexistentes;
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }*/
                   
-                  if (obj['I']["5"] == 1  &&  obj['I']["18"] == 0 && obj['I']["10"] == 1 && obj['I']["11"] == 1  && obj['I']["1"] == 1 && obj['I']["29"] > 200  && obj['I']["28"] > 200  && obj['I']["2"] == 1 && obj['I']["22"] == 1 && obj['I']["8"] == 1){
+                  if (obj['I']["5"] == 1  && yaavisonohome == 0  &&obj['I']["18"] == 0 && obj['I']["10"] == 1 && obj['I']["11"] == 1  && obj['I']["1"] == 1 && obj['I']["29"] > 200  && obj['I']["28"] > 200  && obj['I']["2"] == 1 && obj['I']["22"] == 1 && obj['I']["8"] == 1){
                       
                       
                       var alarmasexistentes = document.getElementById("textoalarmas").value;
