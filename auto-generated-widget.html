@@ -468,7 +468,9 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
                     console.log("it is json");
                     
                     var data = $.parseJSON(msg);
+                    alert("data");
                     data = data.D;
+                    
                     
                     if(data != undefined && data.match(/G28.2 Z0/i)){
                     alert("SE PIDIO HOME");
@@ -1151,7 +1153,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v8A</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v9A</span>
 
         </div>
         <div class="panel-body">
