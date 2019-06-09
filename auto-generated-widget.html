@@ -451,11 +451,11 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
         
          function getjson() {
              
-             if (yaenhome == 0){
+         /*    if (yaenhome == 0){
              var serialPort = "/dev/ttyUSB0";
              var cmd  = "$homy";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);}
-             
+             */
              
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
                 // make sure the data is for the port we're bound to
@@ -1116,7 +1116,7 @@ document.getElementById("textoalarmas").value = alarmasexistentes;
         
         window.setInterval(function(){
 this.getjson();
-}, 2000);
+}, 500);
         
         
     //]]>
