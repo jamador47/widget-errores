@@ -92,6 +92,10 @@ box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, red 0 2
 
 // ChiliPeppr Widget/Element Javascript
 var yaenhome = 0;
+
+var mesaizq = 0;
+var mesader = 0;
+
         var yaavisonohome =0;
 requirejs.config({
     /*
@@ -447,10 +451,409 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
 
     }
 });
+
+     
         
-        
+function subirstopa1f1() {
+
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.82/arduino/digital/28/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa A1 frontal 1 accionado",
+        2000
+    );
+
+    document.getElementById("sa1f1").className = "led-green";
+
+});
+}
+
+function subirstopa1f2() {
+
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.82/arduino/digital/30/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa A1 frontal 2 accionado",
+        2000
+    );
+
+    document.getElementById("sa1f2").className = "led-green";
+
+});
+
+}
+function subirstopa1l1() {
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.82/arduino/digital/12/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa A1 lateral 1 accionado",
+        2000
+    );
+
+    document.getElementById("sa1l1").className = "led-green";
+
+});
+}
+function subirstopa2f1() {
+
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.82/arduino/digital/31/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa A2 frontal 1 accionado",
+        2000
+    );
+
+    document.getElementById("sa2f1").className = "led-green";
+
+});
+
+}
+function subirstopa2f2() {
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.82/arduino/digital/29/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa A2 frontal 2 accionado",
+        2000
+    );
+
+    document.getElementById("sa2f2").className = "led-green";
+
+});
+
+
+
+}
+function subirstopa2l1() {
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.82/arduino/digital/15/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa A2 lateral 1 accionado",
+        2000
+    );
+
+    document.getElementById("sa2l1").className = "led-green";
+
+});
+
+
+
+}
+function subirstopa2l2() {
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.82/arduino/digital/14/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa A2 lateral 2 accionado",
+        2000
+    );
+
+    document.getElementById("sa2l2").className = "led-green";
+
+});
+}
+function subirstopy1f1() {
+    alert("ENTRO");
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.83/arduino/digital/6/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa Y1 frontal 1 accionado",
+        2000
+    );
+
+    document.getElementById("sy1f1").className = "led-green";
+
+});
+}
+function subirstopy1f2() {
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.83/arduino/digital/7/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa Y1 frontal 2 accionado",
+        2000
+    );
+
+    document.getElementById("sy1f2").className = "led-green";
+
+});
+}
+function subirstopy1l1() {
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.83/arduino/digital/45/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa Y1 lateral 1 accionado",
+        2000
+    );
+
+    document.getElementById("sy1l1").className = "led-green";
+
+});
+
+}
+function subirstopy2f1() {
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.83/arduino/digital/8/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa Y2 frontal 1 accionado",
+        2000
+    );
+
+    document.getElementById("sy2f1").className = "led-green";
+
+});
+}
+function subirstopy2f2() {
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.83/arduino/digital/9/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa Y2 frontal 2 accionado",
+        2000
+    );
+
+    document.getElementById("sy2f2").className = "led-green";
+
+});
+
+}
+function subirstopy2l1() {
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.83/arduino/digital/46/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa Y2 lateral 1 accionado",
+        2000
+    );
+
+    document.getElementById("sy2l1").className = "led-green";
+
+});
+}
+function subirstopy2l2() {
+var HttpClient = function () {
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.83/arduino/digital/44/1';
+var client = new HttpClient();
+client.get(theurl, function (response) {
+
+    chilipeppr.publish(
+        '/com-chilipeppr-elem-flashmsg/flashmsg',
+        "Mesas",
+        "Posicionador mesa Y2 lateral 2 accionado",
+        2000
+    );
+
+    document.getElementById("sy2l2").className = "led-green";
+
+});
+}
+
+
          function getjson() {
-             
+            subirstopy1f1();
+
+    var esto = this;
+
              if (yaavisonohome == 0 &&  yaenhome == 0){
              var serialPort = "/dev/ttyUSB0";
              var cmd  = "$homy";
@@ -533,7 +936,139 @@ var HttpClient = function() {
     var obj = JSON.parse(response);
            
                   
-                  
+                  if (mesaizq == 0){
+
+                  if (obj['estadobotonmesaizq'] == 1){
+                   
+                   
+                    var HttpClient = function() {
+                  this.get = function(aUrl, aCallback) {
+                      var anHttpRequest = new XMLHttpRequest();
+                      anHttpRequest.onreadystatechange = function() {
+                          if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                              aCallback(anHttpRequest.responseText);
+                      }
+                      anHttpRequest.open("GET", aUrl, true);
+                      anHttpRequest.send(null);
+                  }
+              }
+              var theurl = 'http://localhost:8000/getpos';
+              var client = new HttpClient();
+              client.get(theurl, function(response) {
+    var obj = JSON.parse(response);
+           
+    if (obj['a1f1']){
+        subirstopa1f1();
+    }
+    if (obj['a1f2']){
+        subirstopa1f2();
+    }
+    if (obj['a1l1']){
+        subirstopa1l1();
+
+    }
+    if (obj['a2f1']){
+        subirstopa2f1();
+
+    }
+    if (obj['a2f2']){
+        subirstopa2f2();
+
+    }
+    if (obj['a2l1']){
+        subirstopa2l1();
+
+        
+    }
+    if (obj['a2l2']){
+        subirstopa2l2();
+
+    }
+    
+
+              });
+                    mesaizq = 1;
+
+
+                  }
+                }
+
+                if (mesader == 0){
+
+if (obj['estadobotonmesader'] == 1){
+ 
+    var HttpClient = function() {
+                  this.get = function(aUrl, aCallback) {
+                      var anHttpRequest = new XMLHttpRequest();
+                      anHttpRequest.onreadystatechange = function() {
+                          if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                              aCallback(anHttpRequest.responseText);
+                      }
+                      anHttpRequest.open("GET", aUrl, true);
+                      anHttpRequest.send(null);
+                  }
+              }
+              var theurl = 'http://localhost:8000/getpos';
+              var client = new HttpClient();
+              client.get(theurl, function(response) {
+    var obj = JSON.parse(response);
+           
+    if (obj['y1f1']){
+subirstopy1f1();
+}
+if (obj['y1f2']){
+    subirstopy1f2();
+
+}
+if (obj['y1l1']){
+    subirstopy1l1();
+
+}
+if (obj['y2f1']){
+    subirstopy2f1();
+
+}
+if (obj['y2f2']){
+    subirstopy2f2();
+
+}
+if (obj['y2l1']){
+    subirstopy2l1();
+
+    
+}
+if (obj['y2l2']){
+    subirstopy2l2();
+
+}
+    
+
+              });
+ 
+ 
+  mesader = 1;
+
+
+}
+}
+
+if (obj['estadobotonmesader'] == 2){
+ 
+ 
+ 
+ mesader = 0;
+
+
+}
+
+if (obj['estadobotonmesaizq'] == 2){
+                   
+                   
+                   
+                   mesaizq = 0;
+
+
+                 }
                   //if (obj['O'][1] == )
                   // if (obj['I']["1"] == )
                   
