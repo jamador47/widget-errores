@@ -974,15 +974,15 @@ function activarM67(){
                         }
 // LEER SI MESA ESTA EN CARGA
 
- var theurl = 'http://192.168.0.82/arduino/digital/37';
+ var theurl = 'http://192.168.0.82/arduino/digital/41';
                         var client = new HttpClient();
                         client.get(theurl, function (response) {
 
-var res = response.split("Pin D37 set to ");
+var res = response.split("Pin D41 set to ");
 
                                             response = parseInt(res[1]);
 
-                                            if (response == 1) {
+                                            if (response == 0) {
                                                     
                                                                             
                  // LEER SI ESTA DESBLOQUEADA                               
@@ -1605,16 +1605,7 @@ var res = response.split("Pin D41 set to ");
                         
                         else{
                             
-                             var erroresexistentes = document.getElementById("textoerrores").value;
-
-                                    erroresexistentes = erroresexistentes.concat("\\\n\\\n");
-
-                                    erroresexistentes = erroresexistentes.concat("Mesa A no esta en posición de carga");
-                              
-                                    document.getElementById("textoerrores").value = erroresexistentes;
-                                
-                    	var cmd  = "!";
-                        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                            
                       
                         }
                         });
@@ -2258,16 +2249,7 @@ var res = response.split("Pin D32 set to ");
 }
                         else{
                             
- var erroresexistentes = document.getElementById("textoerrores").value;
-
-                                    erroresexistentes = erroresexistentes.concat("\\\n\\\n");
-
-                                    erroresexistentes = erroresexistentes.concat("Mesa Y no esta en posición de carga. Error de movimiento");
-                              
-                                    document.getElementById("textoerrores").value = erroresexistentes;
-                                
-                    	var cmd  = "!";
-                        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+ 
                       
                         }});
     
@@ -2970,7 +2952,6 @@ var theurl = 'http://192.168.0.98/resetder';
                                                         
                 } else{
 
-                    // MESA A NO ESTA EN POSICION CERO ABSOLUTO
                     var erroresexistentes = document.getElementById("textoerrores").value;
 
 erroresexistentes = erroresexistentes.concat("\\\n\\\n");
