@@ -2930,7 +2930,7 @@ var res = response.split("Pin D28 set to ");
                                         if (response == 1) {
                                                 
                                             //GETRESET DER + METER MESA DER.
-                                            activarM67();
+                                            
                                             var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
                             var anHttpRequest = new XMLHttpRequest();
@@ -2948,7 +2948,7 @@ var theurl = 'http://192.168.0.98/resetder';
                     var client = new HttpClient();
                     client.get(theurl, function (response) {});
 
-                                            
+                    activarM67();
                                                         
                 } else{
 
@@ -3128,8 +3128,6 @@ var res = response.split("Pin D28 set to ");
 
                                         if (response == 1) {
                                                 
-                                            //GETRESET IZQ + METER MESA IZQ.
-                                            activarM68();
                                             var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
                             var anHttpRequest = new XMLHttpRequest();
@@ -3146,6 +3144,9 @@ var res = response.split("Pin D28 set to ");
 var theurl = 'http://192.168.0.98/resetizq';
                     var client = new HttpClient();
                     client.get(theurl, function (response) {});
+                                            //GETRESET IZQ + METER MESA IZQ.
+                                            activarM68();
+                                  
                                                         
                 } else{
 
@@ -3834,7 +3835,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v7A</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v8A</span>
 
         </div>
         <div class="panel-body">
