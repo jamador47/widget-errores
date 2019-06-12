@@ -2724,8 +2724,7 @@ var HttpClient = function() {
               var theurl = 'http://192.168.0.98/getpos';
               var client = new HttpClient();
               client.get(theurl, function(response) {
-    var obj1 = JSON.parse(response);});
-                  
+    var obj1 = JSON.parse(response);
                   if (mesaizq == 0){
 
                   if (obj['estadobotonmesaizq'] == 1){
@@ -3785,7 +3784,8 @@ document.getElementById("textoalarmas").value = alarmasexistentes;
          // <-- when you ge a response, call it
                                          //        again after a 4 second delay
     });
-           
+});
+                        
 }
         
         window.setInterval(function(){
@@ -3818,7 +3818,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v9A</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">vA</span>
 
         </div>
         <div class="panel-body">
