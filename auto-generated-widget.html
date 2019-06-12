@@ -2710,68 +2710,6 @@ var HttpClient = function() {
               client.get(theurl, function(response) {
     var obj = JSON.parse(response);
            
-                  
-                  if (mesaizq == 0){
-
-                  if (obj['estadobotonmesaizq'] == 1){
-                   
-                   
-                    var HttpClient = function() {
-                  this.get = function(aUrl, aCallback) {
-                      var anHttpRequest = new XMLHttpRequest();
-                      anHttpRequest.onreadystatechange = function() {
-                          if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                              aCallback(anHttpRequest.responseText);
-                      }
-                      anHttpRequest.open("GET", aUrl, true);
-                      anHttpRequest.send(null);
-                  }
-              }
-              var theurl = 'http://192.168.0.98/getpos';
-              var client = new HttpClient();
-              client.get(theurl, function(response) {
-    var obj = JSON.parse(response);
-           
-    if (obj['a1f1']){
-        subirstopa1f1();
-    }
-    if (obj['a1f2']){
-        subirstopa1f2();
-    }
-    if (obj['a1l1']){
-        subirstopa1l1();
-
-    }
-    if (obj['a2f1']){
-        subirstopa2f1();
-
-    }
-    if (obj['a2f2']){
-        subirstopa2f2();
-
-    }
-    if (obj['a2l1']){
-        subirstopa2l1();
-
-        
-    }
-    if (obj['a2l2']){
-        subirstopa2l2();
-
-    }
-    
-
-              });
-                    mesaizq = 1;
-
-
-                  }
-                }
-
-                if (mesader == 0){
-
-if (obj['estadobotonmesader'] == 1){
- 
     var HttpClient = function() {
                   this.get = function(aUrl, aCallback) {
                       var anHttpRequest = new XMLHttpRequest();
@@ -2786,40 +2724,85 @@ if (obj['estadobotonmesader'] == 1){
               var theurl = 'http://192.168.0.98/getpos';
               var client = new HttpClient();
               client.get(theurl, function(response) {
-    var obj = JSON.parse(response);
+    var obj1 = JSON.parse(response);});
+                  
+                  if (mesaizq == 0){
+
+                  if (obj['estadobotonmesaizq'] == 1){
+                   
+                   
+               
            
-    if (obj['y1f1']){
+    if (obj1['a1f1']){
+        subirstopa1f1();
+    }
+    if (obj1['a1f2']){
+        subirstopa1f2();
+    }
+    if (obj1['a1l1']){
+        subirstopa1l1();
+
+    }
+    if (obj1['a2f1']){
+        subirstopa2f1();
+
+    }
+    if (obj1['a2f2']){
+        subirstopa2f2();
+
+    }
+    if (obj1['a2l1']){
+        subirstopa2l1();
+
+        
+    }
+    if (obj1['a2l2']){
+        subirstopa2l2();
+
+    }
+    
+                    mesaizq = 1;
+
+
+                  }
+                }
+
+                if (mesader == 0){
+
+if (obj['estadobotonmesader'] == 1){
+ 
+    
+           
+    if (obj1['y1f1']){
 subirstopy1f1();
 }
-if (obj['y1f2']){
+if (obj1['y1f2']){
     subirstopy1f2();
 
 }
-if (obj['y1l1']){
+if (obj1['y1l1']){
     subirstopy1l1();
 
 }
-if (obj['y2f1']){
+if (obj1['y2f1']){
     subirstopy2f1();
 
 }
-if (obj['y2f2']){
+if (obj1['y2f2']){
     subirstopy2f2();
 
 }
-if (obj['y2l1']){
+if (obj1['y2l1']){
     subirstopy2l1();
 
     
 }
-if (obj['y2l2']){
+if (obj1['y2l2']){
     subirstopy2l2();
 
 }
     
 
-              });
- 
  
   mesader = 1;
 
@@ -3019,7 +3002,7 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serial
 });
 
            // CODIGO A PEGAR 
-        }, 5000);    
+        }, 7000);    
  mesader = 0;
 
 
@@ -3835,7 +3818,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v8A</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v9A</span>
 
         </div>
         <div class="panel-body">
