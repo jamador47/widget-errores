@@ -1902,6 +1902,7 @@ var res = response.split("Pin D30 set to ");
     }
 
 // LEE SI MESA ESTA EN TRABAJO
+
 var theurl = 'http://192.168.0.83/arduino/digital/32';
     var client = new HttpClient();
     client.get(theurl, function (response) {
@@ -2723,96 +2724,13 @@ var HttpClient = function() {
               }
               var theurl = 'http://192.168.0.98/getpos';
               var client = new HttpClient();
-              client.get(theurl, function(response) {
-    var obj1 = JSON.parse(response);
-                  if (mesaizq == 0){
 
-                  if (obj['estadobotonmesaizq'] == 1){
-                   
-                   
-               
-           
-    if (obj1['a1f1']){
-        subirstopa1f1();
-    }
-    if (obj1['a1f2']){
-        subirstopa1f2();
-    }
-    if (obj1['a1l1']){
-        subirstopa1l1();
+                 
 
-    }
-    if (obj1['a2f1']){
-        subirstopa2f1();
-
-    }
-    if (obj1['a2f2']){
-        subirstopa2f2();
-
-    }
-    if (obj1['a2l1']){
-        subirstopa2l1();
-
-        
-    }
-    if (obj1['a2l2']){
-        subirstopa2l2();
-
-    }
-    
-                    mesaizq = 1;
-
-
-                  }
-                }
-
-                if (mesader == 0){
-
-if (obj['estadobotonmesader'] == 1){
- 
-    
-           
-    if (obj1['y1f1']){
-subirstopy1f1();
-}
-if (obj1['y1f2']){
-    subirstopy1f2();
-
-}
-if (obj1['y1l1']){
-    subirstopy1l1();
-
-}
-if (obj1['y2f1']){
-    subirstopy2f1();
-
-}
-if (obj1['y2f2']){
-    subirstopy2f2();
-
-}
-if (obj1['y2l1']){
-    subirstopy2l1();
-
-    
-}
-if (obj1['y2l2']){
-    subirstopy2l2();
-
-}
-    
-
- 
-  mesader = 1;
-
-
-}
-}
-
+            
 if (obj['estadobotonmesader'] == 2){
  
-    bajartstopsBtnClick();
-    setTimeout(function(){
+
                 var self = this;
 
     
@@ -3000,8 +2918,7 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serial
 
 });
 
-           // CODIGO A PEGAR 
-        }, 2000);    
+           // CODIGO A PEGAR   
  mesader = 0;
 
 
@@ -3011,13 +2928,10 @@ if (obj['estadobotonmesaizq'] == 2){
                    
     bajartstopsBtnClick();
 
-    setTimeout(function(){
+
                 var self = this;
 
     
-
-
-
                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
                             var anHttpRequest = new XMLHttpRequest();
@@ -3127,7 +3041,7 @@ var theurl = 'http://192.168.0.98/resetizq';
                     var client = new HttpClient();
                     client.get(theurl, function (response) {});
                                             //GETRESET IZQ + METER MESA IZQ.
-                                            activarM68();
+                            activarM68();
                                   
                                                         
                 } else{
@@ -3199,8 +3113,7 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serial
 
 });
 
-           // CODIGO A PEGAR 
-        }, 2000);        
+           // CODIGO A PEGAR       
                    
                    mesaizq = 0;
 
@@ -3784,7 +3697,7 @@ document.getElementById("textoalarmas").value = alarmasexistentes;
          // <-- when you ge a response, call it
                                          //        again after a 4 second delay
     });
-});
+
                         
 }
         
