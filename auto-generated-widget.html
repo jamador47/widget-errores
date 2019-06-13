@@ -2630,12 +2630,11 @@ client.get(theurl, function (response) {
     var esto = this;
 
              if (yaavisonohome == 0 &&  yaenhome == 0){
-             var serialPort = "COM30";
+             var serialPort = "/dev/ttyUSB0";
              var cmd  = "$homy";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
    }
              
-             alert(yaavisonohome);
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
                 // make sure the data is for the port we're bound to
                 if (msg.match(/^\{/)) {
