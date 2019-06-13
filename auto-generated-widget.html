@@ -2710,26 +2710,13 @@ var HttpClient = function() {
               var client = new HttpClient();
               client.get(theurl, function(response) {
     var obj = JSON.parse(response);
-           
-    var HttpClient = function() {
-                  this.get = function(aUrl, aCallback) {
-                      var anHttpRequest = new XMLHttpRequest();
-                      anHttpRequest.onreadystatechange = function() {
-                          if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                              aCallback(anHttpRequest.responseText);
-                      }
-                      anHttpRequest.open("GET", aUrl, true);
-                      anHttpRequest.send(null);
-                  }
-              }
-              var theurl = 'http://192.168.0.98/getpos';
-              var client = new HttpClient();
-
-                 
+                            
 
             
 if (obj['estadobotonmesader'] == 2){
  
+
+
 
                 var self = this;
 
@@ -2739,7 +2726,7 @@ if (obj['estadobotonmesader'] == 2){
 
           
                                             //GETRESET DER + METER MESA DER.
-                                            
+                                        if (parseInt(obj["I"]["262"]) == 1 && parseInt(obj["I"]["261"]) == 1) {
                                             var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
                             var anHttpRequest = new XMLHttpRequest();
@@ -2764,7 +2751,7 @@ var theurl = 'http://192.168.0.98/resetder';
 
            // CODIGO A PEGAR   
  mesader = 0;
-
+}
 
 }
 
@@ -2775,7 +2762,7 @@ if (obj['estadobotonmesaizq'] == 2){
                 var self = this;
 
     
-             
+                if (parseInt(obj['I']["309"]) == 1 && parseInt(obj['I']["310"]) == 1) {
                                                 
                                             var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -2802,7 +2789,7 @@ var theurl = 'http://192.168.0.98/resetizq';
            // CODIGO A PEGAR       
                    
                    mesaizq = 0;
-
+                }
 
                  }
                   //if (obj['O'][1] == )
@@ -3417,7 +3404,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v10A</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v11A</span>
 
         </div>
         <div class="panel-body">
