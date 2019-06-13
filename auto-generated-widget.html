@@ -2635,7 +2635,7 @@ client.get(theurl, function (response) {
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
    }
              
-             
+             alert(yaavisonohome);
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
                 // make sure the data is for the port we're bound to
                 if (msg.match(/^\{/)) {
