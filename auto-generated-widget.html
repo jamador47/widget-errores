@@ -92,11 +92,10 @@ box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, red 0 2
 
 // ChiliPeppr Widget/Element Javascript
 var yaenhome = 0;
-
 var mesaizq = 0;
 var mesader = 0;
+var yaavisonohome =0;
 
-        var yaavisonohome =0;
 requirejs.config({
     /*
     Dependencies can be defined here. ChiliPeppr uses require.js so
@@ -2683,9 +2682,11 @@ client.get(theurl, function (response) {
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
                              var cmd  = "$zvm=5000";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                                    }
-                              yaenhome = 1;
-                              yaavisonohome = 0;
+   yaenhome = 1;
+yaavisonohome = 1;                       
+
+}
+                            
                     }
                     
                     
