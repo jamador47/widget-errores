@@ -2629,12 +2629,15 @@ client.get(theurl, function (response) {
 
     var esto = this;
 
+             
+             // DESCOMENTAR ESTO
+             /*
              if (yaavisonohome == 0 &&  yaenhome == 0){
              var serialPort = "/dev/ttyUSB0";
              var cmd  = "$homy";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
    }
-             
+      */       
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
                 // make sure the data is for the port we're bound to
                 if (msg.match(/^\{/)) {
@@ -2725,7 +2728,7 @@ if (obj['estadobotonmesader'] == 2){
 
 
           
-                                            //GETRESET DER + METER MESA DER.
+                                       //GETRESET DER + METER MESA DER.
                                         if (parseInt(obj["I"]["262"]) == 1 && parseInt(obj["I"]["261"]) == 1) {
                                             var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -2751,6 +2754,20 @@ var theurl = 'http://192.168.0.98/resetder';
 
            // CODIGO A PEGAR   
  mesader = 0;
+}
+else{
+
+    var erroresexistentes = document.getElementById("textoerrores").value;
+             
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Pines de mesa Derecha no lograron bajar, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+
 }
 
 }
@@ -2789,6 +2806,22 @@ var theurl = 'http://192.168.0.98/resetizq';
            // CODIGO A PEGAR       
                    
                    mesaizq = 0;
+                }
+                else{
+
+
+                    var erroresexistentes = document.getElementById("textoerrores").value;
+             
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Pines de mesa Izquierda no lograron bajar, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+
+                    
                 }
 
                  }
