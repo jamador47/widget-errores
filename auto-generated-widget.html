@@ -2853,16 +2853,26 @@ var theurl = 'http://192.168.0.98/resetizq';
                   
                   
                                     if (obj['I']["21"] == 0){
-                    var alarmasexistentes = document.getElementById("textoalarmas").value;
-
+                                        var alarmasexistentes = document.getElementById("textoalarmas").value;
+                    var existentes =  alarmasexistentes.match(/I.21 Contactores Abiertos/gi);
+                    if (existentes == null){
                                     document.getElementById("indicadoralarma").className = "led-yellow";
                                     alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
 
                                     alarmasexistentes = alarmasexistentes.concat("I.21 Contactores Abiertos");
 
-                                    document.getElementById("textoalarmas").value = alarmasexistentes;
+                                    document.getElementById("textoalarmas").value = alarmasexistentes;}
+
                    $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
                       }
+                      else{
+
+var alarmasexistentes = document.getElementById("textoalarmas").value;
+alarmasexistentes = alarmasexistentes.replace("I.21 Contactores Abiertos","");
+document.getElementById("textoalarmas").value = alarmasexistentes;
+
+
+}
                   
                                     if (obj['I']["18"] == 1){
                     var alarmasexistentes = document.getElementById("textoalarmas").value;
