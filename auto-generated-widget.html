@@ -2322,7 +2322,8 @@ setTimeout(function(){
 
                                             if (response == 1){
 
-                                                
+                                                var cmd  = "~";
+                        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
                                                 // SI SE BLOQUEO
                                                // http://192.168.0.85/arduino/digital/7/0
                                             
@@ -2433,6 +2434,9 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serial
                                             response = parseInt(res[1]);
 
                                             if (response == 1){
+
+                                                var cmd  = "~";
+                        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
                                                 // SI SE BLOQUEO
                                                // http://192.168.0.85/arduino/digital/7/0
                                             
