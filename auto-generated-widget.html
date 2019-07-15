@@ -2753,11 +2753,11 @@ client.get(theurl, function (response) {
 
                                 if (yaenhome == 0){
                                  $('#com-chilipeppr-widget-gcode-play').prop("disabled", false);
-                               var cmd  = "$xvm=30000";
+                               var cmd  = "$xvm=20000";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                             var cmd  = "$yvm=30000";
+                             var cmd  = "$yvm=20000";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                             var cmd  = "$avm=30000";
+                             var cmd  = "$avm=20000";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
                              var cmd  = "$zvm=5000";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
