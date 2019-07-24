@@ -2391,6 +2391,9 @@ setTimeout(function(){
                         var client = new HttpClient();
                         client.get(theurl, function (response) {
                             
+                            var cmd  = "~";
+                        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort + " " + cmd);
+                                         
                             var res = response.split("Pin D40 set to ");
 
                                             response = parseInt(res[1]);
@@ -2441,7 +2444,7 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serial
                             }
                         })
                             
-                    },1000)
+                    },2000)
            
           
             
@@ -3524,7 +3527,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v14A</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v14B</span>
 
         </div>
         <div class="panel-body">
