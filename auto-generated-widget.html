@@ -2721,7 +2721,6 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 				var json = $.parseJSON(res);
 
 				if(json.status == '1'){
-					alert("ARDUINO PUEDE CONTINUAR");
                     var serialPort9 = "/dev/ttyACM0";
              var cmd  = "1";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort9 + " " + cmd);
@@ -3584,7 +3583,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v18B</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v20B</span>
 
         </div>
         <div class="panel-body">
