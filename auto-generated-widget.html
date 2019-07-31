@@ -2768,7 +2768,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 				
 						var response = $.parseJSON(this.msg);
 						//no hubo problema al ejecutar el comando
-                        alert(response.msg);
+                        alert(response);
 							//la transaccion termino correctamente
 							if(response.msg == 'e'){
 								macro.status('transaccion completada');
@@ -3589,7 +3589,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v13B</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v2B</span>
 
         </div>
         <div class="panel-body">
