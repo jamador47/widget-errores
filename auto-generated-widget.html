@@ -2782,8 +2782,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
                     // it's json
                     console.log("it is json");
                     
-                    var data = $.parseJSON(msg);
-                    data = data.D;
+                    var data = json.D;
                     
                    
                     if(data != undefined && data.match(/mpox/i)){
@@ -3585,7 +3584,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v1B</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v8B</span>
 
         </div>
         <div class="panel-body">
