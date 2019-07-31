@@ -2779,15 +2779,13 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 					}
 					this.msg = ""; // clear buffer
 				}
-                    // it's json
+                }    // it's json
                     console.log("it is json");
                     
                     var data = json.D;
                     
                    
-                    if(data != undefined && data.match(/mpox/i)){
-                        //alert(data);
-                    }
+                
                         if(data != undefined && data.match(/Y position:          0.000 mm\n/i)){
                         //alert(data);
                             
@@ -2831,7 +2829,7 @@ yaavisonohome = 1;
                     
 
                 }
-            }});
+            });
                     
              
            
