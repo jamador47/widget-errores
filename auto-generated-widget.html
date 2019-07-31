@@ -2761,8 +2761,8 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 
                     var json = $.parseJSON(msg);
 			if ('P' in json && json.P == serialPort2) {
-				if(json.D) this.msg += json.D;
-				if (this.msg.match(/\r/)) {
+				if(json.D) this.msg = json.D;
+				
 					alert('recibido de arduino');
                     alert(this.msg);
 				
@@ -2782,7 +2782,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 						sendCommandToPlc(this.msg);
 					}
 					this.msg = ""; // clear buffer
-				}
+				
                     // it's json
                     console.log("it is json");
                     
