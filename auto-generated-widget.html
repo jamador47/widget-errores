@@ -2761,16 +2761,12 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 
                     var json = $.parseJSON(msg);
 			if ('P' in json && json.P == serialPort2) {
-				 this.msg = json.D;
                  if(json.D != undefined){
-					alert('recibido de arduino');
-                    alert(json.D);
 				
-						var response = $.parseJSON(this.msg);
 						//no hubo problema al ejecutar el comando
                        
 							//la transaccion termino correctamente
-							if(response.msg == 'e'){
+							if(json.D == 'e'){
 								macro.status('transaccion completada');
 								//setTimeout(this.unpauseGcode, 1000);
 								//myWatchChiliPepprPause.sendNextToolToArduino();
@@ -2778,8 +2774,8 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 							}
 					else
 					{
-						macro.status(this.msg);
-						sendCommandToPlc(this.msg);
+						alert(json.D);
+						sendCommandToPlc(json.D);
 					}
 					this.msg = ""; // clear buffer
 				}
@@ -3589,7 +3585,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v4B</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v1B</span>
 
         </div>
         <div class="panel-body">
