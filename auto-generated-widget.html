@@ -2773,10 +2773,148 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 								//myWatchChiliPepprPause.sendNextToolToArduino();
 							
 							}
-                            if(json.D == 'a' || json.D == 'b'){
-                                sendCommandToPlc(json.D);
-							
+
+        /***********************PARTE 1 CH******************************/
+                            if(json.D == 'cambio1'){
+
+                                json.D = "";
+                                var HttpClient = function () {
+                        this.get = function (aUrl, aCallback) {
+                            var anHttpRequest = new XMLHttpRequest();
+                            anHttpRequest.onreadystatechange = function () {
+                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                    aCallback(anHttpRequest.responseText);
+                            }
+                            anHttpRequest.open("GET", aUrl, true);
+                            anHttpRequest.send(null);
+                        }
+                    }
+                    var theurl = 'http://192.168.0.97/?cmd=a';
+                    var client = new HttpClient();
+                    client.get(theurl, function (response) {
+
+
+                                var HttpClient = function () {
+                        this.get = function (aUrl, aCallback) {
+                            var anHttpRequest = new XMLHttpRequest();
+                            anHttpRequest.onreadystatechange = function () {
+                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                    aCallback(anHttpRequest.responseText);
+                            }
+                            anHttpRequest.open("GET", aUrl, true);
+                            anHttpRequest.send(null);
+                        }
+                    }
+                    var theurl = 'http://192.168.0.97/?cmd=s';
+                    var client = new HttpClient();
+                    client.get(theurl, function (response) {
+
+
+                        res = JSON.parse(response);
+
+                        // Validación
+
+                        // Si el brazo está extendido
+                        if (parseInt(res.brazo) == 1) {
+                            var cmd  = "l";
+                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
+                        }
+
+                    }); });
+                               // Mandar una a a la url. Cuanto termine, continuar a J2
 							}
+
+
+  /***********************PARTE 2 CH******************************/
+                            if(json.D == 'cambio2'){
+                                json.D = "";
+                                var HttpClient = function () {
+                        this.get = function (aUrl, aCallback) {
+                            var anHttpRequest = new XMLHttpRequest();
+                            anHttpRequest.onreadystatechange = function () {
+                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                    aCallback(anHttpRequest.responseText);
+                            }
+                            anHttpRequest.open("GET", aUrl, true);
+                            anHttpRequest.send(null);
+                        }
+                    }
+                    var theurl = 'http://192.168.0.97/?cmd=b';
+                    var client = new HttpClient();
+                    client.get(theurl, function (response) {
+
+
+                                var HttpClient = function () {
+                        this.get = function (aUrl, aCallback) {
+                            var anHttpRequest = new XMLHttpRequest();
+                            anHttpRequest.onreadystatechange = function () {
+                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                    aCallback(anHttpRequest.responseText);
+                            }
+                            anHttpRequest.open("GET", aUrl, true);
+                            anHttpRequest.send(null);
+                        }
+                    }
+                    var theurl = 'http://192.168.0.97/?cmd=s';
+                    var client = new HttpClient();
+                    client.get(theurl, function (response) {
+
+
+                        res = JSON.parse(response);
+
+                        // Validación
+
+                        // Si el brazo está contraido
+                        if (parseInt(res.brazo) == 0) {
+                            var cmd  = "m";
+                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
+                        }
+
+                    }); });
+                         
+                               // Mandar una b a la url. Cuando termine, continuar a J3
+							}
+
+      /***********************PARTE 3 CH******************************/
+                            if(json.D == 'cambio3'){
+                                json.D = "";
+
+                                var HttpClient = function () {
+              this.get = function (aUrl, aCallback) {
+                                var anHttpRequest = new XMLHttpRequest();
+                                anHttpRequest.onreadystatechange = function () {
+                                    if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                        aCallback(anHttpRequest.responseText);
+                                }
+                                anHttpRequest.open("GET", aUrl, true);
+                                anHttpRequest.send(null);
+                            }
+                        }
+
+
+ var theurl = 'http://192.168.0.89/arduino/digital/18';
+                        var client = new HttpClient();
+                        client.get(theurl, function (response) {
+                            
+                            var res = response.split("Pin D18 set to ");
+
+                                            response = parseInt(res[1]);
+
+                                            if (response == 0){
+
+                                var cmd  = "n";
+                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
+                                            }
+                        });
+                               // Revisar que el brazo este en descanso. Cuando verifique, continuar a J4
+							}
+
+  /***********************PARTE 4 CH******************************/
+                            if(json.D == 'terminech'){
+                                json.D = "";
+                               // Dar resumir.
+							}
+
 			
 					this.msg = ""; // clear buffer
 				}
@@ -3583,7 +3721,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v20B</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v1.0</span>
 
         </div>
         <div class="panel-body">
