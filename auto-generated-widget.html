@@ -1104,7 +1104,7 @@ setTimeout(function(){
             var theurl = 'http://192.168.0.85/arduino/digital/11/0';
                                 var client = new HttpClient();
                                 client.get(theurl, function (response) {
-                                });
+                                }
 
     },2500)
                                 
@@ -2775,8 +2775,8 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 							}
 
         /***********************PARTE 1 CH******************************/
-                            if(json.D == 'cambio1'){
-
+                            if(json.D == 'c1'){
+alert("recibic1");
                                 json.D = "";
                                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -2826,7 +2826,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 
 
   /***********************PARTE 2 CH******************************/
-                            if(json.D == 'cambio2'){
+                            if(json.D == 'c2'){
                                 json.D = "";
                                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -2876,7 +2876,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 							}
 
       /***********************PARTE 3 CH******************************/
-                            if(json.D == 'cambio3'){
+                            if(json.D == 'c3'){
                                 json.D = "";
 
                                 var HttpClient = function () {
@@ -2910,7 +2910,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 							}
 
   /***********************PARTE 4 CH******************************/
-                            if(json.D == 'terminech'){
+                            if(json.D == 'th'){
                                 json.D = "";
                                // Dar resumir.
 							}
@@ -3721,7 +3721,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v1.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v2.0</span>
 
         </div>
         <div class="panel-body">
