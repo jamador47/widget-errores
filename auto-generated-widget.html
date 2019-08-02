@@ -2765,7 +2765,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
                  if(json.D != undefined){
 				
 						//no hubo problema al ejecutar el comando
-                       
+                       alert(json.D);
 							//la transaccion termino correctamente
 							if(json.D == 'e'){
 								macro.status('transaccion completada');
@@ -3721,7 +3721,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v2.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v3.0</span>
 
         </div>
         <div class="panel-body">
