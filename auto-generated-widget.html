@@ -2778,7 +2778,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 							}
 
         /***********************PARTE 1 CH******************************/
-                            if(json.D == 'c1'){
+                            if(json.D == 'A'){
                                 json.D = "";
                                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -2828,7 +2828,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 
 
   /***********************PARTE 2 CH******************************/
-                            if(json.D == 'c2'){
+                            if(json.D == 'B'){
                                 json.D = "";
                                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -2878,7 +2878,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 							}
 
       /***********************PARTE 3 CH******************************/
-                            if(json.D == 'c3'){
+                            if(json.D == 'C'){
                                 json.D = "";
 
                                 var HttpClient = function () {
@@ -2912,7 +2912,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 							}
 
   /***********************PARTE 4 CH******************************/
-                            if(json.D == 'th'){
+                            if(json.D == 'D'){
                                 json.D = "";
                                // Dar resumir.
 							}
@@ -3723,7 +3723,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v5.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v6.0</span>
 
         </div>
         <div class="panel-body">
