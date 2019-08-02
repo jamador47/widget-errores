@@ -95,6 +95,7 @@ var yaenhome = 0;
 var mesaizq = 0;
 var mesader = 0;
 var yaavisonohome =0;
+var comandoanterior = "";
 var serialPort = "/dev/ttyUSB0";
 
 requirejs.config({
@@ -2765,7 +2766,9 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
                  if(json.D != undefined){
 				
 						//no hubo problema al ejecutar el comando
-                       alert(json.D);
+                       if (json.D != comandoanterior){
+
+                           comandoanterior = json.D;
 							//la transaccion termino correctamente
 							if(json.D == 'e'){
 								macro.status('transaccion completada');
@@ -2776,7 +2779,6 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 
         /***********************PARTE 1 CH******************************/
                             if(json.D == 'c1'){
-alert("c1");
                                 json.D = "";
                                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -2917,7 +2919,7 @@ alert("c1");
 
 			
 					this.msg = ""; // clear buffer
-				}
+				}}
                 }    // it's json
                     console.log("it is json");
                     
@@ -3721,7 +3723,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v99.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v5.0</span>
 
         </div>
         <div class="panel-body">
