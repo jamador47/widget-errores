@@ -2761,6 +2761,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
                 if (msg.match(/^{/)) {
 
                     var json = $.parseJSON(msg);
+                    alert(json);
 			if ('P' in json && json.P == serialPort2) {
                  if(json.D != undefined){
 				
@@ -3721,7 +3722,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v3.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v4.0</span>
 
         </div>
         <div class="panel-body">
