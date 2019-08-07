@@ -825,6 +825,7 @@ function activarM67(){
                                  } else{
              
                                      // MESA A NO ESTA EN POSICION CERO ABSOLUTO
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
                                      var erroresexistentes = document.getElementById("textoerrores").value;
              
              erroresexistentes = erroresexistentes.concat("\\\n\\\n");
@@ -839,6 +840,7 @@ function activarM67(){
                                  }});
                                  
                                  } else{
+                                    document.getElementById("indicadorerrorejec").className = "led-red";
              
                                      var erroresexistentes = document.getElementById("textoerrores").value;
              
@@ -925,7 +927,7 @@ function activarM67(){
              
                                      // MESA A NO ESTA EN POSICION CERO ABSOLUTO
                                      var erroresexistentes = document.getElementById("textoerrores").value;
-             
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
              erroresexistentes = erroresexistentes.concat("\\\n\\\n");
              
              erroresexistentes = erroresexistentes.concat("Mesa A No esta en cero absoluto, Error de Movimiento");
@@ -940,7 +942,7 @@ function activarM67(){
                                  } else{
              
                                      var erroresexistentes = document.getElementById("textoerrores").value;
-             
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
              erroresexistentes = erroresexistentes.concat("\\\n\\\n");
              
              erroresexistentes = erroresexistentes.concat("Mesas se encuentran en modo Gantry, Error de Movimiento");
@@ -1075,7 +1077,7 @@ setTimeout(function(){
                                                         if (response == 0) {
                                                             
                                                         var erroresexistentes = document.getElementById("textoerrores").value;
-
+                                                        document.getElementById("indicadorerrorejec").className = "led-red";
                                                 erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
                                                 erroresexistentes = erroresexistentes.concat("Mesa A no se pudo desbloquear, Error de Movimiento.");
@@ -1313,7 +1315,7 @@ var res = response.split("Pin D41 set to ");
                         var client = new HttpClient();
                         client.get(theurl, function (response) {});
                               var erroresexistentes = document.getElementById("textoerrores").value;
-
+                              document.getElementById("indicadorerrorejec").className = "led-red";
                                     erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
                                     erroresexistentes = erroresexistentes.concat("Mesa A no llego a posición Trabajo, Error de Movimiento.");
@@ -1579,7 +1581,7 @@ var res = response.split("Pin D41 set to ");
                         var client = new HttpClient();
                         client.get(theurl, function (response) {});
                               var erroresexistentes = document.getElementById("textoerrores").value;
-
+                              document.getElementById("indicadorerrorejec").className = "led-red";
                                     erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
                                     erroresexistentes = erroresexistentes.concat("Mesa A no llego a posición Trabajo, Error de Movimiento.");
@@ -1774,7 +1776,7 @@ var res = response.split("Pin D30 set to ");
                                                 
                                            
  var erroresexistentes = document.getElementById("textoerrores").value;
-
+ document.getElementById("indicadorerrorejec").className = "led-red";
                                     erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
                                     erroresexistentes = erroresexistentes.concat("Mesa Y no se pudo desbloquear, Error de movimiento");
@@ -1993,7 +1995,7 @@ var res = response.split("Pin D32 set to ");
                         client.get(theurl, function (response) {});
                              
  var erroresexistentes = document.getElementById("textoerrores").value;
-
+ document.getElementById("indicadorerrorejec").className = "led-red";
                                     erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
                                     erroresexistentes = erroresexistentes.concat("Mesa Y no llego a posición de trabajo");
@@ -2260,7 +2262,7 @@ var res = response.split("Pin D32 set to ");
                         var client = new HttpClient();
                         client.get(theurl, function (response) {});
  var erroresexistentes = document.getElementById("textoerrores").value;
-
+ document.getElementById("indicadorerrorejec").className = "led-red";
                                     erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
                                     erroresexistentes = erroresexistentes.concat("Mesa Y no llego a posición de trabajo");
@@ -2430,7 +2432,7 @@ setTimeout(function(){
 
                                 
                         var erroresexistentes = document.getElementById("textoerrores").value;
-
+                        document.getElementById("indicadorerrorejec").className = "led-red";
 erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
 erroresexistentes = erroresexistentes.concat("Mesas A no pudo ser bloqueada, Error de Movimiento");
@@ -2544,7 +2546,7 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serial
                                 // SI NO SE BLOQUEO (ERROR)
                                 
                         var erroresexistentes = document.getElementById("textoerrores").value;
-
+                        document.getElementById("indicadorerrorejec").className = "led-red";
 erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
 erroresexistentes = erroresexistentes.concat("Mesas derecha no pudo ser bloqueada, Error de Movimiento");
@@ -2791,7 +2793,9 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
                             anHttpRequest.send(null);
                         }
                     }
-                    var theurl = 'http://192.168.0.97/?cmd=a';
+
+                    //Suelta válvula husillo y hace procedimiento 1. 
+                    var theurl = 'http://192.168.0.89/arduino/ch1/1';
                     var client = new HttpClient();
                     client.get(theurl, function (response) {
 
@@ -2807,9 +2811,61 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
                             anHttpRequest.send(null);
                         }
                     }
-                    var theurl = 'http://192.168.0.97/?cmd=s';
+                    var theurl = 'http://192.168.0.89/arduino/estados/1';
                     var client = new HttpClient();
                     client.get(theurl, function (response) {
+
+
+switch(response){
+    case "1":
+    var cmd  = "l";
+    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
+    break;
+
+    case "pbb":
+
+    
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema brazo bajando CH, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+    case "pavc":
+    
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema abriendo válvula del carrusel, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+    case "pavh":
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema abriendo válvula del husillo, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+
+}
+                        
+/*CAMBIAR ESTOOOOOOOOOOOO
+
 
 
                         res = JSON.parse(response);
@@ -2818,11 +2874,12 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 
                         // Si el brazo está extendido
                         if (parseInt(res.brazo) == 1) {
-                            var cmd  = "l";
-                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
-                        }
+                             }
 
-                    }); });
+                  
+
+                    */
+                });   });
                                // Mandar una a a la url. Cuanto termine, continuar a J2
 							}
 
@@ -2841,7 +2898,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
                             anHttpRequest.send(null);
                         }
                     }
-                    var theurl = 'http://192.168.0.97/?cmd=b';
+                    var theurl = 'http://192.168.0.89/arduino/ch2/1';
                     var client = new HttpClient();
                     client.get(theurl, function (response) {
 
@@ -2857,21 +2914,66 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
                             anHttpRequest.send(null);
                         }
                     }
-                    var theurl = 'http://192.168.0.97/?cmd=s';
+                    var theurl = 'http://192.168.0.89/arduino/estados/1';
                     var client = new HttpClient();
                     client.get(theurl, function (response) {
 
 
+
+                      
+switch(response){
+    case "1":
+    var cmd  = "m";
+    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
+    break;
+    case "pbs":
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema subiendo brazo CH, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+    case "pcvc":
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema cerrando válvula del carrusel, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+    case "pcvh":
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema cerrando válvula del husillo, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+
+}
+/*
                         res = JSON.parse(response);
 
                         // Validación
 
                         // Si el brazo está contraido
                         if (parseInt(res.brazo) == 0) {
-                            var cmd  = "m";
-                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
-                        }
+                           }
 
+*/
                     }); });
                          
                                // Mandar una b a la url. Cuando termine, continuar a J3
@@ -3034,7 +3136,7 @@ var theurl = 'http://192.168.0.98/resetder';
 else{
 
     var erroresexistentes = document.getElementById("textoerrores").value;
-             
+    document.getElementById("indicadorerrorejec").className = "led-red";
              erroresexistentes = erroresexistentes.concat("\\\n\\\n");
              
              erroresexistentes = erroresexistentes.concat("Pines de mesa Derecha no lograron bajar, Error de Movimiento");
@@ -3087,6 +3189,7 @@ var theurl = 'http://192.168.0.98/resetizq';
 
 
                     var erroresexistentes = document.getElementById("textoerrores").value;
+                    document.getElementById("indicadorerrorejec").className = "led-red";
              
              erroresexistentes = erroresexistentes.concat("\\\n\\\n");
              
@@ -3128,7 +3231,8 @@ var theurl = 'http://192.168.0.98/resetizq';
 
                       }
                   
-                  
+                   
+
                   
                                     if (obj['I']["21"] == 0 && obj['I']["5"] == 0){
                                         var alarmasexistentes = document.getElementById("textoalarmas").value;
@@ -3723,7 +3827,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v6.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v8.0</span>
 
         </div>
         <div class="panel-body">
