@@ -95,6 +95,7 @@ var yaenhome = 0;
 var mesaizq = 0;
 var mesader = 0;
 var yaavisonohome =0;
+var parseadaanterior = "";
 var comandoanterior = "";
 var serialPort = "/dev/ttyUSB0";
 
@@ -3026,11 +3027,13 @@ switch(response){
                     console.log("it is json");
                     
                     var data = json.D;
-                    if (JSON.parse(data).er.msg == "Soft limit exceeded"){
+                    if (JSON.parse(data).er.msg == "Soft limit exceeded" && parseadaanterior != data){
                        alert("Un eje fue movido más alla de los límites");
-                       json.D = "";
+                      
+                      json.D = "";
                        data= "";
                         }
+                        parseadaanterior = data;
                         if(data != undefined && json.D=="Y position:          0.000 mm\n"){
                         //alert(data);
                             
@@ -3829,7 +3832,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v7.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v9.0</span>
 
         </div>
         <div class="panel-body">
