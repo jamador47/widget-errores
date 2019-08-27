@@ -3029,10 +3029,9 @@ switch(response){
                     var data = json.D;
                     if (JSON.parse(data).er.msg == "Soft limit exceeded" && parseadaanterior != data){
                        alert("Un eje fue movido más alla de los límites");
-                      
-                      json.D = "";
     
                         }
+               
                         parseadaanterior = data;
                         if(data != undefined && json.D=="Y position:          0.000 mm\n"){
                         //alert(data);
@@ -3075,7 +3074,7 @@ yaavisonohome = 1;
                     }
                     
                     
-
+                    json.D = "";
                 }
             });
                     
