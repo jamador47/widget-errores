@@ -98,6 +98,7 @@ var yaavisonohome =0;
 var parseadaanterior = "";
 var comandoanterior = "";
 var serialPort = "/dev/ttyUSB0";
+var avisonivelgrasa = 0;
 
 requirejs.config({
     /*
@@ -3097,6 +3098,11 @@ var HttpClient = function() {
     var obj = JSON.parse(response);
                             
 
+
+if (parseInt(obj['I']["309"]) >= 1000 && avisonivelgrasa != 1){
+    avisonivelgrasa = 1;
+alert("NIVEL DE GRASA BAJO");
+}
             
 if (obj['estadobotonmesader'] == 2){
  
