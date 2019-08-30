@@ -96,6 +96,10 @@ var mesaizq = 0;
 var mesader = 0;
 var yaavisonohome =0;
 var parseadaanterior = "";
+
+var contadorloop = 0;
+var contadorloopcopia = 0;
+
 var comandoanterior = "";
 var serialPort = "/dev/ttyUSB0";
 var avisonivelgrasa = 0;
@@ -2761,10 +2765,11 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
    }
        */
+     contadorloop=contadorloop+1;
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
                 // make sure the data is for the port we're bound to
                
-
+contadorloopcopia=contadorloop;
                     var json = $.parseJSON(msg);
 
 
@@ -3084,7 +3089,9 @@ yaavisonohome = 1;
                 }
             );
                     
-             
+             if(contadorloop != contadorloopcopia){
+                 parseadaanterior = "";
+             }
            
 var HttpClient = function() {
                   this.get = function(aUrl, aCallback) {
@@ -3842,7 +3849,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v28.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v38.0</span>
 
         </div>
         <div class="panel-body">
