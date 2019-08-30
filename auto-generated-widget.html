@@ -3037,9 +3037,9 @@ switch(response){
                     
                     var data = json.D;
                     var mensaje = JSON.parse(data).er.msg;
-                    alert(msg);
+                
                     if (mensaje == "Soft limit exceeded" && parseadaanterior != mensaje){
-                       alert("Un eje fue movido más alla de los límites");
+                       alert("Un eje fue movido más alla de los límites, presione RESET para continuar usando la máquina");
     
                         }
                
@@ -3849,7 +3849,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v38.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v48.0</span>
 
         </div>
         <div class="panel-body">
