@@ -2770,7 +2770,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
                 // make sure the data is for the port we're bound to
                
 contadorloopcopia=contadorloop;
-                    var json = $.parseJSON(msg);
+                    var json = JSON.parse(msg);
 
 
 
@@ -3819,11 +3819,11 @@ document.getElementById("textoalarmas").value = alarmasexistentes;
                         
 }
         
-      /*  window.setInterval(function(){
+        window.setInterval(function(){
 this.getjson();
 }, 500);
         
-        */
+        
     //]]>
     </script>
 
