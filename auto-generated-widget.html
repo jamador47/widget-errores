@@ -2931,6 +2931,8 @@ switch(response){
                     }
                     var theurl = 'http://192.168.0.80/arduino/estado/1';
                     var client = new HttpClient();
+
+                    setTimeout(function(){
                     client.get(theurl, function (response) {
 
 
@@ -2989,8 +2991,8 @@ switch(response){
                            }
 
 */
-                    }); });
-                         
+                    }); },1000) });
+                
                                // Mandar una b a la url. Cuando termine, continuar a J3
 							}
 
@@ -3856,7 +3858,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v19.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v29.0</span>
 
         </div>
         <div class="panel-body">
