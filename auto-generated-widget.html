@@ -2781,8 +2781,9 @@ contadorloopcopia=contadorloop;
                        if (json.D != comandoanterior){
                         alert(json.D);
                         comandoanterior = json.D;
+                        var comandocomparar = json.D;
 
-                          
+                        
 							//la transaccion termino correctamente
 							if(json.D == 'e'){
 								macro.status('transaccion completada');
@@ -2792,7 +2793,7 @@ contadorloopcopia=contadorloop;
 							}
 
         /***********************PARTE 1 CH******************************/
-                            if(json.D == 'A'){
+                            if(comandocomparar.match(/A/)){
                                 alert("entro a a");
                                 json.D = "";
                                 var HttpClient = function () {
@@ -2898,7 +2899,7 @@ switch(response){
 
 
   /***********************PARTE 2 CH******************************/
-                            if(json.D == 'B'){
+                            if(comandocomparar.match(/B/)){
                                 alert("ENTRO A B");
                                 json.D = "";
                                 var HttpClient = function () {
@@ -2994,7 +2995,7 @@ switch(response){
 							}
 
       /***********************PARTE 3 CH******************************/
-                            if(json.D == 'C'){
+                            if(comandocomparar.match(/C/)){
                                 json.D = "";
 
                                 var HttpClient = function () {
@@ -3028,7 +3029,7 @@ switch(response){
 							}
 
   /***********************PARTE 4 CH******************************/
-                            if(json.D == 'D'){
+                            if(comandocomparar.match(/D/)){
                                 json.D = "";
                                // Dar resumir.
 							}
@@ -3855,7 +3856,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v16.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v19.0</span>
 
         </div>
         <div class="panel-body">
