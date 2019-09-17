@@ -2780,7 +2780,7 @@ contadorloopcopia=contadorloop;
 						//no hubo problema al ejecutar el comando
                        if (json.D != comandoanterior){
                         alert(json.D);
-                           comandoanterior = json.D;
+                          
 							//la transaccion termino correctamente
 							if(json.D == 'e'){
 								macro.status('transaccion completada');
@@ -3032,6 +3032,8 @@ switch(response){
 			
 					this.msg = ""; // clear buffer
 				}}
+                comandoanterior = json.D;
+                
                 }    // it's json
                     console.log("it is json");
                     
