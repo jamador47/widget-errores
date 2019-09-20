@@ -3043,7 +3043,7 @@ switch(response){
                 }    // it's json
                     console.log("it is json");
                     
-        if ('P' in json && json.P == serialPort) {
+     /*   if ('P' in json && json.P == serialPort) {
                     var data = json.D;
                     var mensaje = JSON.parse(data).er.msg;
                 
@@ -3095,7 +3095,11 @@ yaavisonohome = 1;
                     
                     
                     json.D = "";
-                }}
+                }
+            
+            */
+            
+            }
             );
                     
              if(contadorloop != contadorloopcopia){
@@ -3829,7 +3833,7 @@ document.getElementById("textoalarmas").value = alarmasexistentes;
 }
         
         window.setInterval(function(){
-//this.getjson();
+this.getjson();
 }, 500);
         
         
