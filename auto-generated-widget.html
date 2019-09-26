@@ -101,7 +101,7 @@ var contadorloop = 0;
 var contadorloopcopia = 0;
 
 var comandoanterior = "";
-var serialPort = "/dev/ttyUSB0";
+var serialPort = "COM3";
 var avisonivelgrasa = 0;
 
 requirejs.config({
@@ -2730,7 +2730,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 				var json = $.parseJSON(res);
 
 				if(json.status == '1'){
-                    var serialPort9 = "/dev/ttyACM0";
+                    var serialPort9 = "COM4";
              var cmd  = "1";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort9 + " " + cmd);
 
@@ -2754,13 +2754,13 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 
 	}
          function getjson() {
-            var serialPort2 = "/dev/ttyACM0";
+            var serialPort2 = "COM4";
 
     var esto = this;
 
          /*    
              if (yaavisonohome == 0 &&  yaenhome == 0){
-             var serialPort = "/dev/ttyUSB0";
+             var serialPort = "COM3";
              var cmd  = "$homy";
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
    }
