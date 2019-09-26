@@ -233,11 +233,356 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
          */
         init: function() {
             console.log("I am being initted. Thanks.");
+            var serialPort2 = "COM4";
 
+var esto = this;
             this.setupUiFromLocalStorage();
             this.btnSetup();
             this.forkSetup();
 
+            chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
+                // make sure the data is for the port we're bound to
+                    var json = JSON.parse(msg);
+
+
+
+			if ('P' in json && json.P == serialPort2) {
+                 if(json.D != undefined){
+				
+						//no hubo problema al ejecutar el comando
+                       if (json.D != comandoanterior){
+                        alert(json.D);
+                        comandoanterior = json.D;
+                        var comandocomparar = json.D;
+
+                        
+							//la transaccion termino correctamente
+							if(json.D == 'e'){
+								macro.status('transaccion completada');
+								//setTimeout(this.unpauseGcode, 1000);
+								//myWatchChiliPepprPause.sendNextToolToArduino();
+							
+							}
+
+        /***********************PARTE 1 CH******************************/
+                            if(comandocomparar.match(/A/)){
+                                alert("entro a a");
+                                json.D = "";
+                                var HttpClient = function () {
+                        this.get = function (aUrl, aCallback) {
+                            var anHttpRequest = new XMLHttpRequest();
+                            anHttpRequest.onreadystatechange = function () {
+                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                    aCallback(anHttpRequest.responseText);
+                            }
+                            anHttpRequest.open("GET", aUrl, true);
+                            anHttpRequest.send(null);
+                        }
+                    }
+
+                    //Suelta válvula husillo y hace procedimiento 1. 
+                    var theurl = 'http://192.168.0.80/arduino/ch1/1';
+                    var client = new HttpClient();
+                    client.get(theurl, function (response) {
+
+
+                                var HttpClient = function () {
+                        this.get = function (aUrl, aCallback) {
+                            var anHttpRequest = new XMLHttpRequest();
+                            anHttpRequest.onreadystatechange = function () {
+                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                    aCallback(anHttpRequest.responseText);
+                            }
+                            anHttpRequest.open("GET", aUrl, true);
+                            anHttpRequest.send(null);
+                        }
+                    }
+                    var theurl = 'http://192.168.0.80/arduino/estado/1';
+                    var client = new HttpClient();
+                    client.get(theurl, function (response) {
+
+alert(response);
+switch(response){
+    case "1":
+    var cmd  = "l";
+    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
+    break;
+
+    case "pbb":
+
+    
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema brazo bajando CH, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+    case "pavc":
+    
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema abriendo válvula del carrusel, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+    case "pavh":
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema abriendo válvula del husillo, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+
+}
+                        
+/*CAMBIAR ESTOOOOOOOOOOOO
+
+
+
+                        res = JSON.parse(response);
+
+                        // Validación
+
+                        // Si el brazo está extendido
+                        if (parseInt(res.brazo) == 1) {
+                             }
+
+                  
+
+                    */
+                });   });
+                               // Mandar una a a la url. Cuanto termine, continuar a J2
+							}
+
+
+  /***********************PARTE 2 CH******************************/
+                            if(comandocomparar.match(/B/)){
+                            alert("ENTRO A B");
+                                json.D = "";
+                                var HttpClient = function () {
+                        this.get = function (aUrl, aCallback) {
+                            var anHttpRequest = new XMLHttpRequest();
+                            anHttpRequest.onreadystatechange = function () {
+                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                    aCallback(anHttpRequest.responseText);
+                            }
+                            anHttpRequest.open("GET", aUrl, true);
+                            anHttpRequest.send(null);
+                        }
+                    }
+                    var theurl = 'http://192.168.0.80/arduino/ch2/1';
+                    var client = new HttpClient();
+                    client.get(theurl, function (response) {
+
+
+                                var HttpClient = function () {
+                        this.get = function (aUrl, aCallback) {
+                            var anHttpRequest = new XMLHttpRequest();
+                            anHttpRequest.onreadystatechange = function () {
+                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                    aCallback(anHttpRequest.responseText);
+                            }
+                            anHttpRequest.open("GET", aUrl, true);
+                            anHttpRequest.send(null);
+                        }
+                    }
+                    var theurl = 'http://192.168.0.80/arduino/estado/1';
+                    var client = new HttpClient();
+
+                    setTimeout(function(){
+                    client.get(theurl, function (response) {
+
+
+
+                      
+switch(response){
+    case "1":
+    alert("SUBIO BIEN");
+    var cmd  = "m";
+    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
+    break;
+    case "pbs":
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema subiendo brazo CH, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+    case "pcvc":
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema cerrando válvula del carrusel, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    break;
+    case "pcvh":
+    var cmd  = "m";
+    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
+
+    /*
+    var erroresexistentes = document.getElementById("textoerrores").value;
+                                     document.getElementById("indicadorerrorejec").className = "led-red";
+             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+             
+             erroresexistentes = erroresexistentes.concat("Problema cerrando válvula del husillo, Error de Movimiento");
+             
+             document.getElementById("textoerrores").value = erroresexistentes;
+             
+             var cmd  = "!";
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); */
+    break;
+
+}
+/*
+                        res = JSON.parse(response);
+
+                        // Validación
+
+                        // Si el brazo está contraido
+                        if (parseInt(res.brazo) == 0) {
+                           }
+
+*/
+                    }); },500) });
+                
+                               // Mandar una b a la url. Cuando termine, continuar a J3
+							}
+
+      /***********************PARTE 3 CH******************************/
+                            if(comandocomparar.match(/C/)){
+                                json.D = "";
+
+                                var HttpClient = function () {
+              this.get = function (aUrl, aCallback) {
+                                var anHttpRequest = new XMLHttpRequest();
+                                anHttpRequest.onreadystatechange = function () {
+                                    if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                        aCallback(anHttpRequest.responseText);
+                                }
+                                anHttpRequest.open("GET", aUrl, true);
+                                anHttpRequest.send(null);
+                            }
+                        }
+
+
+ var theurl = 'http://192.168.0.80/arduino/digital/18';
+                        var client = new HttpClient();
+                        client.get(theurl, function (response) {
+                            
+                            var res = response.split("Pin D18 set to ");
+
+                                            response = parseInt(res[1]);
+
+                                            if (response == 0){
+
+                                var cmd  = "n";
+                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
+                                            }
+                        });
+                               // Revisar que el brazo este en descanso. Cuando verifique, continuar a J4
+							}
+
+  /***********************PARTE 4 CH******************************/
+                            if(comandocomparar.match(/D/)){
+                                json.D = "";
+                               // Dar resumir.
+							}
+
+			
+					this.msg = ""; // clear buffer
+				}}
+                
+                }    // it's json
+                    console.log("it is json");
+                    
+      if ('P' in json && json.P == serialPort) {
+                    var data = json.D;
+                    var mensaje = JSON.parse(data).er.msg;
+                
+                    if (mensaje == "Soft limit exceeded" && parseadaanterior != mensaje){
+                       alert("Un eje fue movido más alla de los límites, presione RESET para continuar usando la máquina");
+    
+                        }
+               
+                        parseadaanterior = mensaje;
+                       
+                       
+                       /*
+                       
+                       if(data != undefined && json.D=="Y position:          0.000 mm\n"){
+                        //alert(data);
+                            
+                            if (yaavisonohome == 0){
+                             document.getElementById("indicadorhome").className = "led-yellow";
+                             $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
+                             var cmd  = "$xvm=5000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$yvm=5000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$avm=5000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$zvm=1500";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                                   yaavisonohome = 1;
+                  }          
+                            
+                    }
+                        if(data != undefined && data.match(/Y position:          1.000 mm\n/i)){
+                        //alert(data);
+                                                           
+                            document.getElementById("indicadorhome").className = "led-off";
+
+                                if (yaenhome == 0){
+                                 $('#com-chilipeppr-widget-gcode-play').prop("disabled", false);
+                               var cmd  = "$xvm=20000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$yvm=20000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$avm=20000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                             var cmd  = "$zvm=5000";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+   yaenhome = 1;
+yaavisonohome = 1;                       
+
+}
+                            
+                    }
+                    
+                    
+                    json.D = "";
+                      */
+                }
+            
+          
+            
+            }
+            );
             console.log("I am done being initted.");
         },
         /**
@@ -2766,351 +3111,7 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
    }
        */
      contadorloop=contadorloop+1;
-            chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
-                // make sure the data is for the port we're bound to
-               
-contadorloopcopia=contadorloop;
-                    var json = JSON.parse(msg);
-
-
-
-			if ('P' in json && json.P == serialPort2) {
-                 if(json.D != undefined){
-				
-						//no hubo problema al ejecutar el comando
-                       if (json.D != comandoanterior){
-                        alert(json.D);
-                        comandoanterior = json.D;
-                        var comandocomparar = json.D;
-
-                        
-							//la transaccion termino correctamente
-							if(json.D == 'e'){
-								macro.status('transaccion completada');
-								//setTimeout(this.unpauseGcode, 1000);
-								//myWatchChiliPepprPause.sendNextToolToArduino();
-							
-							}
-
-        /***********************PARTE 1 CH******************************/
-                            if(comandocomparar.match(/A/)){
-                                alert("entro a a");
-                                json.D = "";
-                                var HttpClient = function () {
-                        this.get = function (aUrl, aCallback) {
-                            var anHttpRequest = new XMLHttpRequest();
-                            anHttpRequest.onreadystatechange = function () {
-                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                                    aCallback(anHttpRequest.responseText);
-                            }
-                            anHttpRequest.open("GET", aUrl, true);
-                            anHttpRequest.send(null);
-                        }
-                    }
-
-                    //Suelta válvula husillo y hace procedimiento 1. 
-                    var theurl = 'http://192.168.0.80/arduino/ch1/1';
-                    var client = new HttpClient();
-                    client.get(theurl, function (response) {
-
-
-                                var HttpClient = function () {
-                        this.get = function (aUrl, aCallback) {
-                            var anHttpRequest = new XMLHttpRequest();
-                            anHttpRequest.onreadystatechange = function () {
-                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                                    aCallback(anHttpRequest.responseText);
-                            }
-                            anHttpRequest.open("GET", aUrl, true);
-                            anHttpRequest.send(null);
-                        }
-                    }
-                    var theurl = 'http://192.168.0.80/arduino/estado/1';
-                    var client = new HttpClient();
-                    client.get(theurl, function (response) {
-
-alert(response);
-switch(response){
-    case "1":
-    var cmd  = "l";
-    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
-    break;
-
-    case "pbb":
-
-    
-    var erroresexistentes = document.getElementById("textoerrores").value;
-                                     document.getElementById("indicadorerrorejec").className = "led-red";
-             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
-             
-             erroresexistentes = erroresexistentes.concat("Problema brazo bajando CH, Error de Movimiento");
-             
-             document.getElementById("textoerrores").value = erroresexistentes;
-             
-             var cmd  = "!";
-             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
-    break;
-    case "pavc":
-    
-    var erroresexistentes = document.getElementById("textoerrores").value;
-                                     document.getElementById("indicadorerrorejec").className = "led-red";
-             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
-             
-             erroresexistentes = erroresexistentes.concat("Problema abriendo válvula del carrusel, Error de Movimiento");
-             
-             document.getElementById("textoerrores").value = erroresexistentes;
-             
-             var cmd  = "!";
-             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
-    break;
-    case "pavh":
-    var erroresexistentes = document.getElementById("textoerrores").value;
-                                     document.getElementById("indicadorerrorejec").className = "led-red";
-             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
-             
-             erroresexistentes = erroresexistentes.concat("Problema abriendo válvula del husillo, Error de Movimiento");
-             
-             document.getElementById("textoerrores").value = erroresexistentes;
-             
-             var cmd  = "!";
-             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
-    break;
-
-}
-                        
-/*CAMBIAR ESTOOOOOOOOOOOO
-
-
-
-                        res = JSON.parse(response);
-
-                        // Validación
-
-                        // Si el brazo está extendido
-                        if (parseInt(res.brazo) == 1) {
-                             }
-
-                  
-
-                    */
-                });   });
-                               // Mandar una a a la url. Cuanto termine, continuar a J2
-							}
-
-
-  /***********************PARTE 2 CH******************************/
-                            if(comandocomparar.match(/B/)){
-                            alert("ENTRO A B");
-                                json.D = "";
-                                var HttpClient = function () {
-                        this.get = function (aUrl, aCallback) {
-                            var anHttpRequest = new XMLHttpRequest();
-                            anHttpRequest.onreadystatechange = function () {
-                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                                    aCallback(anHttpRequest.responseText);
-                            }
-                            anHttpRequest.open("GET", aUrl, true);
-                            anHttpRequest.send(null);
-                        }
-                    }
-                    var theurl = 'http://192.168.0.80/arduino/ch2/1';
-                    var client = new HttpClient();
-                    client.get(theurl, function (response) {
-
-
-                                var HttpClient = function () {
-                        this.get = function (aUrl, aCallback) {
-                            var anHttpRequest = new XMLHttpRequest();
-                            anHttpRequest.onreadystatechange = function () {
-                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                                    aCallback(anHttpRequest.responseText);
-                            }
-                            anHttpRequest.open("GET", aUrl, true);
-                            anHttpRequest.send(null);
-                        }
-                    }
-                    var theurl = 'http://192.168.0.80/arduino/estado/1';
-                    var client = new HttpClient();
-
-                    setTimeout(function(){
-                    client.get(theurl, function (response) {
-
-
-
-                      
-switch(response){
-    case "1":
-    alert("SUBIO BIEN");
-    var cmd  = "m";
-    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
-    break;
-    case "pbs":
-    var erroresexistentes = document.getElementById("textoerrores").value;
-                                     document.getElementById("indicadorerrorejec").className = "led-red";
-             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
-             
-             erroresexistentes = erroresexistentes.concat("Problema subiendo brazo CH, Error de Movimiento");
-             
-             document.getElementById("textoerrores").value = erroresexistentes;
-             
-             var cmd  = "!";
-             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
-    break;
-    case "pcvc":
-    var erroresexistentes = document.getElementById("textoerrores").value;
-                                     document.getElementById("indicadorerrorejec").className = "led-red";
-             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
-             
-             erroresexistentes = erroresexistentes.concat("Problema cerrando válvula del carrusel, Error de Movimiento");
-             
-             document.getElementById("textoerrores").value = erroresexistentes;
-             
-             var cmd  = "!";
-             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
-    break;
-    case "pcvh":
-    var cmd  = "m";
-    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
-
-    /*
-    var erroresexistentes = document.getElementById("textoerrores").value;
-                                     document.getElementById("indicadorerrorejec").className = "led-red";
-             erroresexistentes = erroresexistentes.concat("\\\n\\\n");
-             
-             erroresexistentes = erroresexistentes.concat("Problema cerrando válvula del husillo, Error de Movimiento");
-             
-             document.getElementById("textoerrores").value = erroresexistentes;
-             
-             var cmd  = "!";
-             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); */
-    break;
-
-}
-/*
-                        res = JSON.parse(response);
-
-                        // Validación
-
-                        // Si el brazo está contraido
-                        if (parseInt(res.brazo) == 0) {
-                           }
-
-*/
-                    }); },500) });
-                
-                               // Mandar una b a la url. Cuando termine, continuar a J3
-							}
-
-      /***********************PARTE 3 CH******************************/
-                            if(comandocomparar.match(/C/)){
-                                json.D = "";
-
-                                var HttpClient = function () {
-              this.get = function (aUrl, aCallback) {
-                                var anHttpRequest = new XMLHttpRequest();
-                                anHttpRequest.onreadystatechange = function () {
-                                    if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                                        aCallback(anHttpRequest.responseText);
-                                }
-                                anHttpRequest.open("GET", aUrl, true);
-                                anHttpRequest.send(null);
-                            }
-                        }
-
-
- var theurl = 'http://192.168.0.80/arduino/digital/18';
-                        var client = new HttpClient();
-                        client.get(theurl, function (response) {
-                            
-                            var res = response.split("Pin D18 set to ");
-
-                                            response = parseInt(res[1]);
-
-                                            if (response == 0){
-
-                                var cmd  = "n";
-                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
-                                            }
-                        });
-                               // Revisar que el brazo este en descanso. Cuando verifique, continuar a J4
-							}
-
-  /***********************PARTE 4 CH******************************/
-                            if(comandocomparar.match(/D/)){
-                                json.D = "";
-                               // Dar resumir.
-							}
-
-			
-					this.msg = ""; // clear buffer
-				}}
-                
-                }    // it's json
-                    console.log("it is json");
-                    
-      if ('P' in json && json.P == serialPort) {
-                    var data = json.D;
-                    var mensaje = JSON.parse(data).er.msg;
-                
-                    if (mensaje == "Soft limit exceeded" && parseadaanterior != mensaje){
-                       alert("Un eje fue movido más alla de los límites, presione RESET para continuar usando la máquina");
-    
-                        }
-               
-                        parseadaanterior = mensaje;
-                       
-                       
-                       /*
-                       
-                       if(data != undefined && json.D=="Y position:          0.000 mm\n"){
-                        //alert(data);
-                            
-                            if (yaavisonohome == 0){
-                             document.getElementById("indicadorhome").className = "led-yellow";
-                             $('#com-chilipeppr-widget-gcode-play').prop("disabled", true);
-                             var cmd  = "$xvm=5000";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                             var cmd  = "$yvm=5000";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                             var cmd  = "$avm=5000";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                             var cmd  = "$zvm=1500";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                                   yaavisonohome = 1;
-                  }          
-                            
-                    }
-                        if(data != undefined && data.match(/Y position:          1.000 mm\n/i)){
-                        //alert(data);
-                                                           
-                            document.getElementById("indicadorhome").className = "led-off";
-
-                                if (yaenhome == 0){
-                                 $('#com-chilipeppr-widget-gcode-play').prop("disabled", false);
-                               var cmd  = "$xvm=20000";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                             var cmd  = "$yvm=20000";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                             var cmd  = "$avm=20000";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                             var cmd  = "$zvm=5000";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-   yaenhome = 1;
-yaavisonohome = 1;                       
-
-}
-                            
-                    }
-                    
-                    
-                    json.D = "";
-                      */
-                }
-            
-          
-            
-            }
-            );
+  
                     
              if(contadorloop != contadorloopcopia){
                  parseadaanterior = "";
@@ -3843,7 +3844,7 @@ document.getElementById("textoalarmas").value = alarmasexistentes;
 }
         
         window.setInterval(function(){
-//this.getjson();
+this.getjson();
 }, 500);
         
         
@@ -3872,7 +3873,7 @@ document.getElementById("textoalarmas").value = alarmasexistentes;
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v80.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v85.0</span>
 
         </div>
         <div class="panel-body">
