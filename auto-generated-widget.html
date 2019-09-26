@@ -242,6 +242,8 @@ var esto = this;
 
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
                 // make sure the data is for the port we're bound to
+
+                if (msg.match(/^\{/)) {
                     var json = JSON.parse(msg);
 
 
@@ -582,7 +584,7 @@ switch(response){
 
                     console.log("it is json");
        
-                    
+                }
      
             
           
@@ -3879,7 +3881,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v89.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v90.0</span>
 
         </div>
         <div class="panel-body">
