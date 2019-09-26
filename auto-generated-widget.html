@@ -519,12 +519,12 @@ switch(response){
                 
                 }    // it's json
                     console.log("it is json");
-                    var data = json.D;
+       
+                    
+      if ('P' in json && json.P == serialPort  && JSON.parse(json.D).er.msg == "Soft limit exceeded") {
+                    
+        var data = json.D;
                     var mensaje = JSON.parse(data).er.msg;
-                    
-      if ('P' in json && json.P == serialPort  && mensaje == "Soft limit exceeded" && parseadaanterior != mensaje) {
-                    
-                
                     if (mensaje == "Soft limit exceeded" && parseadaanterior != mensaje){
                        alert("Un eje fue movido más alla de los límites, presione RESET para continuar usando la máquina");
     
@@ -3873,7 +3873,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v99.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v17.0</span>
 
         </div>
         <div class="panel-body">
