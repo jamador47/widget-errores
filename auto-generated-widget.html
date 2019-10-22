@@ -2787,8 +2787,14 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 							
 							}
 
+if (comandocomparar.match(/A/) || comandocomparar.match(/B/) || comandocomparar.match(/C/) || comandocomparar.match(/D/) || comandocomparar.match(/a/) || comandocomparar.match(/b/)
+|| comandocomparar.match(/c/) || comandocomparar.match(/d/)){
+
+
+    switch (comandocomparar) {
         /***********************PARTE 1 CH******************************/
-                            if(comandocomparar.match(/A/)){ 
+
+case (gcodeline.match(/A/) || {}).input :
                                 json.D = "";
                                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -2889,11 +2895,14 @@ switch(response){
                     */
                 });   });
                                // Mandar una a a la url. Cuanto termine, continuar a J2
-							}
+							
 
 
+break;
   /***********************PARTE 2 CH******************************/
-                            if(comandocomparar.match(/B/)){
+
+  case (gcodeline.match(/B/) || {}).input :
+
                   
                                 json.D = "";
                                 var HttpClient = function () {
@@ -2993,10 +3002,11 @@ switch(response){
                     }); },500) });
                 
                                // Mandar una b a la url. Cuando termine, continuar a J3
-							}
+							break;
 
       /***********************PARTE 3 CH******************************/
-                            if(comandocomparar.match(/C/)){
+      case (gcodeline.match(/C/) || {}).input :
+
                                 json.D = "";
 
                                 var HttpClient = function () {
@@ -3027,21 +3037,21 @@ switch(response){
                                             }
                         });
                                // Revisar que el brazo este en descanso. Cuando verifique, continuar a J4
-							}
+							break;
 
   /***********************PARTE 4 CH******************************/
-                            if(comandocomparar.match(/D/)){
+  case (gcodeline.match(/D/) || {}).input :
+
                                 json.D = "";
                                // Dar resumir.
-							}
-
-
+							break;
 
 
 
 
         /***********************PARTE 1 CH 2******************************/
-        if(comandocomparar.match(/a/)){ 
+        case (gcodeline.match(/a/) || {}).input :
+ 
                                 json.D = "";
                                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -3142,11 +3152,12 @@ switch(response){
                     */
                 });   });
                                // Mandar una a a la url. Cuanto termine, continuar a J2
-							}
+							break;
 
 
   /***********************PARTE 2 CH******************************/
-                            if(comandocomparar.match(/b/)){
+  case (gcodeline.match(/b/) || {}).input :
+
                   
                                 json.D = "";
                                 var HttpClient = function () {
@@ -3246,10 +3257,11 @@ switch(response){
                     }); },500) });
                 
                                // Mandar una b a la url. Cuando termine, continuar a J3
-							}
+							break;
 
       /***********************PARTE 3 CH******************************/
-                            if(comandocomparar.match(/c/)){
+      case (gcodeline.match(/c/) || {}).input :
+
                                 json.D = "";
 
                                 var HttpClient = function () {
@@ -3280,10 +3292,11 @@ switch(response){
                                             }
                         });
                                // Revisar que el brazo este en descanso. Cuando verifique, continuar a J4
-							}
+							break;
 
   /***********************PARTE 4 CH******************************/
-                            if(comandocomparar.match(/d/)){
+  case (gcodeline.match(/d/) || {}).input :
+
 
 
                                 json.D = "";
@@ -3347,9 +3360,11 @@ switch(response){
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send COM4 " + cmd );
                                // Dar resumir.
 							});
-                            }
+                            break;
 
 			
+
+                        }}
 					this.msg = ""; // clear buffer
 				}}
                 
@@ -4204,7 +4219,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v38.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v40.0</span>
 
         </div>
         <div class="panel-body">
