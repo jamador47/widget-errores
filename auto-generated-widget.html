@@ -2778,7 +2778,8 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
                         comandoanterior = json.D;
                         var comandocomparar = json.D;
 
-                        
+                        alert("ANTES");
+                        alert(comandocomparar);
 							//la transaccion termino correctamente
 							if(json.D == 'e'){
 								macro.status('transaccion completada');
@@ -2789,7 +2790,8 @@ function sendCommandToPlc(cmd){ // ENVIAR COMANDO AL PLC
 
 if (comandocomparar.match(/A/) || comandocomparar.match(/B/) || comandocomparar.match(/C/) || comandocomparar.match(/D/) || comandocomparar.match(/a/) || comandocomparar.match(/b/)
 || comandocomparar.match(/c/) || comandocomparar.match(/d/)){
-
+alert("Durante");
+alert(comandocomparar);
 
     switch (comandocomparar) {
         /***********************PARTE 1 CH******************************/
@@ -4219,7 +4221,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v40.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v47.0</span>
 
         </div>
         <div class="panel-body">
