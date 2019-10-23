@@ -3032,21 +3032,14 @@ switch(response){
 
                                             response = parseInt(res[1]);
 
-                                            if (response == 0){
+                                            if (response == 1){
 
-                                var cmd  = "#";
-                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
+                            alert("Hubo un problema moviendo el brazo.")
                                             }
                         });
-                               // Revisar que el brazo este en descanso. Cuando verifique, continuar a J4
+                               // Revisar que el brazo este en descanso. UNA VEZ VERIFICADO, PROSEGUIR A OPERACION NORMAL.
 							break;
 
-  /***********************PARTE 4 CH******************************/
-  case (comandocomparar.match(/D/) || {}).input :
-
-                                json.D = "";
-                               // Dar resumir.
-							break;
 
 
 
@@ -3264,6 +3257,7 @@ switch(response){
       /***********************PARTE 3 CH******************************/
       case (comandocomparar.match(/c/) || {}).input :
 
+// REVISA QUE EL BRAZO ESTA EN DESCANSO, SI ESTA EN DESCANSO MANDA A HACER EL SEGUNDO CAMBIO SOLO MODO LINEAL.
                                 json.D = "";
 
                                 var HttpClient = function () {
@@ -3289,19 +3283,7 @@ switch(response){
 
                                             if (response == 0){
 
-                                var cmd  = "¿";
-                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
-                                            }
-                        });
-                               // Revisar que el brazo este en descanso. Cuando verifique, continuar a J4
-							break;
-
-  /***********************PARTE 4 CH******************************/
-  case (comandocomparar.match(/d/) || {}).input :
-
-
-
-                                json.D = "";
+                                                              json.D = "";
                                 var HttpClient = function () {
                                 
                                 this.get = function (aUrl, aCallback) {
@@ -3362,7 +3344,12 @@ switch(response){
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send COM4 " + cmd );
                                // Dar resumir.
 							});
-                            break;
+                                            }
+                        });
+                              
+							break;
+
+  
 
 			
 
