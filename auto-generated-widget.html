@@ -3079,7 +3079,7 @@ switch(response){
 
 switch(response){
     case "1":
-    var cmd  = "l";
+    var cmd  = "#";
     chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
     break;
 
@@ -3191,7 +3191,7 @@ break;
 switch(response){
     case "1":
     //alert("SUBIO BIEN");
-    var cmd  = "m";
+    var cmd  = "$";
     chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
     break;
     case "pbs":
@@ -3219,10 +3219,9 @@ switch(response){
              chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
     break;
     case "pcvh":
-    var cmd  = "m";
-    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
+     
 
-    /*
+    
     var erroresexistentes = document.getElementById("textoerrores").value;
                                      document.getElementById("indicadorerrorejec").className = "led-red";
              erroresexistentes = erroresexistentes.concat("\\\n\\\n");
@@ -3232,7 +3231,7 @@ switch(response){
              document.getElementById("textoerrores").value = erroresexistentes;
              
              var cmd  = "!";
-             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); */
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
     break;
 
 }
@@ -3336,7 +3335,7 @@ client.get(theurl, function (response) {
 
 switch(response){
 case "1":
-var cmd  = "L";
+var cmd  = "R";
 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
 break;
 
@@ -3446,7 +3445,7 @@ client.get(theurl, function (response) {
 switch(response){
 case "1":
 //alert("SUBIO BIEN");
-var cmd  = "M";
+var cmd  = "S";
 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
 break;
 case "pbs":
@@ -3474,10 +3473,7 @@ var cmd  = "!";
 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
 break;
 case "pcvh":
-var cmd  = "M";
-chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
 
-/*
 var erroresexistentes = document.getElementById("textoerrores").value;
       document.getElementById("indicadorerrorejec").className = "led-red";
 erroresexistentes = erroresexistentes.concat("\\\n\\\n");
@@ -3487,7 +3483,7 @@ erroresexistentes = erroresexistentes.concat("Problema cerrando válvula del hus
 document.getElementById("textoerrores").value = erroresexistentes;
 
 var cmd  = "!";
-chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); */
+chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
 break;
 
 }
