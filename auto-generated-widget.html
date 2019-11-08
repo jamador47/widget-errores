@@ -3303,6 +3303,8 @@ switch(response){
                                                 //ACA VA LO DE QUE BAJE A POSICION DE TRABAJO, ENCIENDA HUSILLO Y LE DE RESUME.
                                                 cmd = "~";
 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send COM3 " + cmd );
+var cmd  = "!";
+    chilipeppr.publish('/com-chilipeppr-interface-cnccontroller/plannerresume');
 
                                             }
                         });
