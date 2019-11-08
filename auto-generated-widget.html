@@ -2863,6 +2863,11 @@ switch(response){
              chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
     break;
     case "pavh":
+    var cmd  = "l";
+    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
+
+ /* ESTA MALA
+ 
     var erroresexistentes = document.getElementById("textoerrores").value;
                                      document.getElementById("indicadorerrorejec").className = "led-red";
              erroresexistentes = erroresexistentes.concat("\\\n\\\n");
@@ -2873,6 +2878,9 @@ switch(response){
              
              var cmd  = "!";
              chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    */
+    
+    
     break;
 
 }
@@ -3111,6 +3119,12 @@ switch(response){
              chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
     break;
     case "pavh":
+
+    var cmd  = "#";
+    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
+    
+
+    /* ESTA MALO
     var erroresexistentes = document.getElementById("textoerrores").value;
                                      document.getElementById("indicadorerrorejec").className = "led-red";
              erroresexistentes = erroresexistentes.concat("\\\n\\\n");
@@ -3121,6 +3135,8 @@ switch(response){
              
              var cmd  = "!";
              chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    
+    */
     break;
 
 }
@@ -3220,8 +3236,10 @@ switch(response){
     break;
     case "pcvh":
      
-
-    
+    var cmd  = "$";
+    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
+   
+    /* ESTA MALO
     var erroresexistentes = document.getElementById("textoerrores").value;
                                      document.getElementById("indicadorerrorejec").className = "led-red";
              erroresexistentes = erroresexistentes.concat("\\\n\\\n");
@@ -3232,6 +3250,7 @@ switch(response){
              
              var cmd  = "!";
              chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+    */
     break;
 
 }
