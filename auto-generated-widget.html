@@ -345,7 +345,7 @@ switch(response){
     var cmd  = "l";
     chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
 
- /* ESTA MALA
+
  
     var erroresexistentes = document.getElementById("textoerrores").value;
                                      document.getElementById("indicadorerrorejec").className = "led-red";
@@ -357,7 +357,7 @@ switch(response){
              
              var cmd  = "!";
              chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
-    */
+   
     
     
     break;
@@ -974,6 +974,9 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serial
 break;
 case "pcvh":
 
+var cmd  = "S";
+chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
+/*
 var erroresexistentes = document.getElementById("textoerrores").value;
       document.getElementById("indicadorerrorejec").className = "led-red";
 erroresexistentes = erroresexistentes.concat("\\\n\\\n");
@@ -983,7 +986,7 @@ erroresexistentes = erroresexistentes.concat("Problema cerrando válvula del hus
 document.getElementById("textoerrores").value = erroresexistentes;
 
 var cmd  = "!";
-chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
+chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); */
 break;
 
 }
