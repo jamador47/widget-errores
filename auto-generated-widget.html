@@ -780,11 +780,17 @@ switch(response){
                                             }
                                             else{
                                                 //ACA VA LO DE QUE BAJE A POSICION DE TRABAJO, ENCIENDA HUSILLO Y LE DE RESUME.
+                                              
+                                              
+this.activarm3();
+this.onM10BtnClick();
+
+setTimeout(() => {
+                                              
                                                 cmd = "~";
 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send COM3 " + cmd );
-var cmd  = "!";
     chilipeppr.publish('/com-chilipeppr-interface-cnccontroller/plannerresume');
-
+}, 8000);
                                             }
                         });
                                // Revisar que el brazo este en descanso. UNA VEZ VERIFICADO, PROSEGUIR A OPERACION NORMAL.
