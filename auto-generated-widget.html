@@ -1520,7 +1520,7 @@ switch(response){
          
         onM10BtnClick : function(evt){
      
-                
+                serialPort2 = "COM4";
      var cmd  = "!";
 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort + " " + cmd);
      
