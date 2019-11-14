@@ -1097,7 +1097,7 @@ client.get(theurl, function (response) {
 
 
 //Cambiar real.
-cmd = "x"+toolausar+";"+'1';
+cmd = "q"+toolausar+";"+'1';
 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send COM4 " + cmd );
 // Dar resumir.
 });
@@ -1409,7 +1409,7 @@ switch(response){
                 
 
                 //Cambiar real.
-                    cmd = "q"+toolausar+";"+'1';
+                    cmd = "x"+toolausar+";"+'1';
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send COM4 " + cmd );
                                // Dar resumir.
 							});
