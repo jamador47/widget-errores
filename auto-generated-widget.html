@@ -266,8 +266,12 @@ var esto = this;
 							
 							}
 
+                var comparada = "";            
+
 if (comandocomparar.match(/A/) || comandocomparar.match(/B/) || comandocomparar.match(/C/) || comandocomparar.match(/D/) || comandocomparar.match(/E/) || comandocomparar.match(/F/) || comandocomparar.match(/a/) || comandocomparar.match(/b/)
 || comandocomparar.match(/c/) || comandocomparar.match(/d/) || comandocomparar.match(/e/) || comandocomparar.match(/f/)){
+
+if (comparada != comandocomparar){
 
     switch (comandocomparar) {
         /***********************PARTE 1 CH******************************/
@@ -1423,7 +1427,14 @@ switch(response){
 			
 
                         }}
-					this.msg = ""; // clear buffer
+					
+                    
+                    
+                    }
+
+                    comparada = comandocomparar;
+                    
+                    this.msg = ""; // clear buffer
 				}}
                 
                 }    // it's json
@@ -4959,7 +4970,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v88.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v8 8.0</span>
 
         </div>
         <div class="panel-body">
