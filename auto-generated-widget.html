@@ -276,6 +276,9 @@ alert("ESTOS SON A COMPARAR");
         /***********************PARTE 1 CH******************************/
 
 case (comandocomparar.match(/A/) || {}).input :
+
+if(this.comparada != "A"){
+    this.comparada = "A";
                                 json.D = "";
                                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -365,6 +368,7 @@ switch(response){
     
     break;
 
+
 }
                         
 /*CAMBIAR ESTOOOOOOOOOOOO
@@ -385,12 +389,16 @@ switch(response){
                 });   });
                                // Mandar una a a la url. Cuanto termine, continuar a J2
 							
-
+}
 
 break;
   /***********************PARTE 2 CH******************************/
 
   case (comandocomparar.match(/B/) || {}).input :
+
+  
+if(this.comparada != "B"){
+    this.comparada = "B";
 
                   
                                 json.D = "";
@@ -490,12 +498,15 @@ switch(response){
 */
                     }); },500) });
                 
+}
                                // Mandar una b a la url. Cuando termine, continuar a J3
 							break;
 
       /***********************PARTE 3 CH******************************/
       case (comandocomparar.match(/C/) || {}).input :
 
+      if(this.comparada != "C"){
+    this.comparada = "C";
                                 json.D = "";
 
                                 var HttpClient = function () {
@@ -525,13 +536,17 @@ switch(response){
                                             }
                         });
                                // Revisar que el brazo este en descanso. UNA VEZ VERIFICADO, PROSEGUIR A OPERACION NORMAL.
-							break;
+      }
+      break;
 
 
 
    /***********************PARTE 1 CH******************************/
 
    case (comandocomparar.match(/D/) || {}).input :
+   
+if(this.comparada != "D"){
+    this.comparada = "D";
                                 json.D = "";
                                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -642,12 +657,14 @@ switch(response){
                                // Mandar una a a la url. Cuanto termine, continuar a J2
 							
 
-
+}
 break;
   /***********************PARTE 2 CH******************************/
 
   case (comandocomparar.match(/E/) || {}).input :
 
+  if(this.comparada != "E"){
+    this.comparada = "E";
                   
                                 json.D = "";
                                 var HttpClient = function () {
@@ -748,12 +765,14 @@ switch(response){
 */
                     }); },500) });
                 
-                               // Mandar una b a la url. Cuando termine, continuar a J3
+                       }        // Mandar una b a la url. Cuando termine, continuar a J3
 							break;
 
       /***********************PARTE 3 CH******************************/
       case (comandocomparar.match(/F/) || {}).input :
 
+      if(this.comparada != "F"){
+    this.comparada = "F";
                                 json.D = "";
 
                                 var HttpClient = function () {
@@ -797,7 +816,8 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send COM3 " + c
                                             }
                         });
                                // Revisar que el brazo este en descanso. UNA VEZ VERIFICADO, PROSEGUIR A OPERACION NORMAL.
-							break;
+      	}
+          	break;
 
 
 
@@ -807,6 +827,8 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send COM3 " + c
   /***********************PARTE 1 CH 2******************************/
   case (comandocomparar.match(/d/) || {}).input :
  
+if(this.comparada != "d"){
+    this.comparada = "d";
  json.D = "";
  var HttpClient = function () {
 this.get = function (aUrl, aCallback) {
@@ -907,12 +929,15 @@ if (parseInt(res.brazo) == 1) {
 */
 });   });
 // Mandar una a a la url. Cuanto termine, continuar a J2
+}
 break;
 
 
 /***********************PARTE 2 CH******************************/
 case (comandocomparar.match(/e/) || {}).input :
 
+if(this.comparada != "e"){
+    this.comparada = "e";
 
  json.D = "";
  var HttpClient = function () {
@@ -1012,11 +1037,13 @@ if (parseInt(res.brazo) == 0) {
 }); },500) });
 
 // Mandar una b a la url. Cuando termine, continuar a J3
-break;
+}break;
 
 /***********************PARTE 3 CH******************************/
 case (comandocomparar.match(/f/) || {}).input :
 
+if(this.comparada != "f"){
+    this.comparada = "f";
 // REVISA QUE EL BRAZO ESTA EN DESCANSO, SI ESTA EN DESCANSO MANDA A HACER EL SEGUNDO CAMBIO SOLO MODO LINEAL.
  json.D = "";
 
@@ -1106,6 +1133,7 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send COM4 " + c
 });
              }
 });
+}
 
 break;
 
@@ -1118,7 +1146,9 @@ break;
 
         /***********************PARTE 1 CH 2******************************/
         case (comandocomparar.match(/a/) || {}).input :
- 
+
+        if(this.comparada != "a"){
+    this.comparada = "a"; 
                                 json.D = "";
                                 var HttpClient = function () {
                         this.get = function (aUrl, aCallback) {
@@ -1218,13 +1248,15 @@ switch(response){
 
                     */
                 });   });
-                               // Mandar una a a la url. Cuanto termine, continuar a J2
+                        }       // Mandar una a a la url. Cuanto termine, continuar a J2
 							break;
 
 
   /***********************PARTE 2 CH******************************/
   case (comandocomparar.match(/b/) || {}).input :
 
+  if(this.comparada != "b"){
+    this.comparada = "b";
                   
                                 json.D = "";
                                 var HttpClient = function () {
@@ -1322,13 +1354,15 @@ switch(response){
 
 */
                     }); },500) });
-                
+  }
                                // Mandar una b a la url. Cuando termine, continuar a J3
 							break;
 
       /***********************PARTE 3 CH******************************/
       case (comandocomparar.match(/c/) || {}).input :
 
+      if(this.comparada != "c"){
+    this.comparada = "c";
 // REVISA QUE EL BRAZO ESTA EN DESCANSO, SI ESTA EN DESCANSO MANDA A HACER EL SEGUNDO CAMBIO SOLO MODO LINEAL.
                                 json.D = "";
 
@@ -1418,7 +1452,7 @@ switch(response){
 							});
                                             }
                         });
-                              
+      }       
 							break;
 
   
@@ -1431,7 +1465,6 @@ switch(response){
                     
                     }
 
-                    this.comparada = comandocomparar;
                     
                     this.msg = ""; // clear buffer
 				}}
@@ -4972,7 +5005,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v838.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v848.0</span>
 
         </div>
         <div class="panel-body">
