@@ -234,7 +234,7 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
         init: function() {
             console.log("I am being initted. Thanks.");
             var serialPort2 = "COM4";
-
+var comparada = "";
 var esto = this;
             this.setupUiFromLocalStorage();
             this.btnSetup();
@@ -242,13 +242,16 @@ var esto = this;
 
             chilipeppr.subscribe("/com-chilipeppr-widget-serialport/ws/recv", this, function(msg) {
                 // make sure the data is for the port we're bound to
+                        
 
                 if (msg.match(/^\{/)) {
                     var json = JSON.parse(msg);
 
 
+                    if ('P' in json){
 
-			if ('P' in json && json.P == serialPort2) {
+
+			 if(json.P == serialPort2) {
                  if(json.D != undefined){
 				
 						//no hubo problema al ejecutar el comando
@@ -257,21 +260,12 @@ var esto = this;
                         comandoanterior = json.D;
                         var comandocomparar = json.D;
 
-                  
-							//la transaccion termino correctamente
-							if(json.D == 'e'){
-								macro.status('transaccion completada');
-								//setTimeout(this.unpauseGcode, 1000);
-								//myWatchChiliPepprPause.sendNextToolToArduino();
-							
-							}
 
-                var comparada = "";            
 
 if (comandocomparar.match(/A/) || comandocomparar.match(/B/) || comandocomparar.match(/C/) || comandocomparar.match(/D/) || comandocomparar.match(/E/) || comandocomparar.match(/F/) || comandocomparar.match(/a/) || comandocomparar.match(/b/)
 || comandocomparar.match(/c/) || comandocomparar.match(/d/) || comandocomparar.match(/e/) || comandocomparar.match(/f/)){
 
-if (comparada != comandocomparar){
+if (this.comparada != comandocomparar){
 
     switch (comandocomparar) {
         /***********************PARTE 1 CH******************************/
@@ -1432,7 +1426,7 @@ switch(response){
                     
                     }
 
-                    comparada = comandocomparar;
+                    this.comparada = comandocomparar;
                     
                     this.msg = ""; // clear buffer
 				}}
@@ -1441,7 +1435,7 @@ switch(response){
                    
                    
                    
-                if ('P' in json && json.P == serialPort) {
+                if (json.P == serialPort) {
                     
                     
                    var data = json.D;
@@ -1509,6 +1503,9 @@ switch(response){
                                   
                             }
 
+
+
+                        }
                     console.log("it is json");
        
                 }
@@ -4970,7 +4967,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v8 8.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v818.0</span>
 
         </div>
         <div class="panel-body">
