@@ -267,8 +267,10 @@ if (comandocomparar.match(/A/) || comandocomparar.match(/B/) || comandocomparar.
 
 if (this.comparada != comandocomparar){
 
+alert("ESTOS SON A COMPARAR");
     alert(this.comparada);
     alert(comandocomparar);
+    alert("YA SE COMPARARON");
 
     switch (comandocomparar) {
         /***********************PARTE 1 CH******************************/
@@ -347,7 +349,7 @@ switch(response){
     chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);    
 
 
- 
+ /*
     var erroresexistentes = document.getElementById("textoerrores").value;
                                      document.getElementById("indicadorerrorejec").className = "led-red";
              erroresexistentes = erroresexistentes.concat("\\\n\\\n");
@@ -359,7 +361,7 @@ switch(response){
              var cmd  = "!";
              chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd); 
    
-    
+    */
     
     break;
 
@@ -4970,7 +4972,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v828.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v838.0</span>
 
         </div>
         <div class="panel-body">
