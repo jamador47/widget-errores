@@ -103,6 +103,7 @@ var contadorloopcopia = 0;
 var comandoanterior = "";
 var serialPort = "COM3";
 var avisonivelgrasa = 0;
+var comparada = "";
 
 requirejs.config({
     /*
@@ -234,7 +235,6 @@ cpdefine("inline:com-chilipeppr-widget-errores", ["chilipeppr_ready", /* other d
         init: function() {
             console.log("I am being initted. Thanks.");
             var serialPort2 = "COM4";
-var comparada = "";
 var esto = this;
             this.setupUiFromLocalStorage();
             this.btnSetup();
@@ -266,6 +266,9 @@ if (comandocomparar.match(/A/) || comandocomparar.match(/B/) || comandocomparar.
 || comandocomparar.match(/c/) || comandocomparar.match(/d/) || comandocomparar.match(/e/) || comandocomparar.match(/f/)){
 
 if (this.comparada != comandocomparar){
+
+    alert(this.comparada);
+    alert(comandocomparar);
 
     switch (comandocomparar) {
         /***********************PARTE 1 CH******************************/
@@ -4967,7 +4970,7 @@ this.getjson();
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v818.0</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">v828.0</span>
 
         </div>
         <div class="panel-body">
