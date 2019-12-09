@@ -3935,14 +3935,13 @@
                 var client = new HttpClient();
                 client.get(theurl, function(response) {
 
-                    var cmd = "~";
-                    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort + " " + cmd);
 
                     var res = response.split("Pin D40 set to ");
 
                     response = parseInt(res[1]);
 
                     if (response == 1) {
+                        chilipeppr.publish('/com-chilipeppr-interface-cnccontroller/plannerresume', "");
 
                         var cmd = "~";
                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort + " " + cmd);
@@ -4054,6 +4053,7 @@
                     response = parseInt(res[1]);
 
                     if (response == 1) {
+                        chilipeppr.publish('/com-chilipeppr-interface-cnccontroller/plannerresume', "");
 
                         var cmd = "~";
                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort + " " + cmd);
