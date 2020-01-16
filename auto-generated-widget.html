@@ -1627,9 +1627,37 @@
 
                 onM10BtnClick: function(evt) {
 
-                    serialPort2 = "COM4";
-                    var cmd = "!";
-                    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort + " " + cmd);
+                    var HttpClient = function() {
+                        this.get = function(aUrl, aCallback) {
+                            var anHttpRequest = new XMLHttpRequest();
+                            anHttpRequest.onreadystatechange = function() {
+                                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                                    aCallback(anHttpRequest.responseText);
+                            }
+                            anHttpRequest.open("GET", aUrl, true);
+                            anHttpRequest.send(null);
+                        }
+                    }
+                    var theurl = 'http://192.168.0.80/arduino/digital/3/1';
+                    var client = new HttpClient();
+                    client.get(theurl, function(response) {
+
+
+
+                    });
+
+                    setTimeout(function() {
+
+                        theurl = 'http://192.168.0.80/arduino/digital/3/0';
+                        client.get(theurl, function(response) {
+
+
+
+                        });
+
+                    }, 22000);
+
+
 
                     var cmd = "p";
                     chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
@@ -1645,6 +1673,7 @@
 
 
                     //Continúa procedimiento
+
 
 
 
