@@ -1625,31 +1625,132 @@
                  */
 
 
-                onM10BtnClick: function(evt) {
-
-                    serialPort2 = "COM4";
-                    var cmd = "!";
-                    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort + " " + cmd);
-
-                    var cmd = "p";
-                    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
-
-                    document.getElementById("indicadorposhusillo").className = "led-green";
-
-                    chilipeppr.publish(
-                        '/com-chilipeppr-elem-flashmsg/flashmsg',
-                        "Estado del Husillo",
-                        "Husillo en posición de trabajo",
-                        4000 /* show for 2 second */
-                    );
-
-
-                    //Continúa procedimiento
+                 onM20BtnClick: function(evt) {
 
 
 
 
-                },
+/*   var erroresexistentes = document.getElementById("textoalarmas").value;
+   
+   alarmasexistentes = alarmasexistentes.concat("\\\n\\\n");
+   
+   alarmasexistentes = alarmasexistentes.concat("LALA");
+
+   document.getElementById("textoalarmas").value = alarmasexistentes;
+   */
+
+
+
+// Validación
+
+// Si el brazo no está extendido
+var esto = this;
+var HttpClient = function() {
+    this.get = function(aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function() {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.80/arduino/digital/8/1';
+var client = new HttpClient();
+client.get(theurl, function(response) {
+  
+
+});
+setTimeout(function(){
+   
+    var theurl = 'http://192.168.0.80/arduino/digital/8/0';
+var client = new HttpClient();
+client.get(theurl, function(response) {});
+
+   },2000);
+
+
+
+var cmd = "g";
+chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
+
+document.getElementById("indicadorposhusillo").className = "led-off";
+
+chilipeppr.publish(
+    '/com-chilipeppr-elem-flashmsg/flashmsg',
+    "Estado del Husillo",
+    "Husillo en posición de descanso",
+    4000 /* show for 2 second */
+);
+
+
+//Continúa procedimiento
+
+
+
+},
+
+
+
+
+//Husillo trabajo
+
+onM10BtnClick: function(evt) {
+
+var HttpClient = function() {
+    this.get = function(aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function() {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+var theurl = 'http://192.168.0.80/arduino/digital/3/1';
+var client = new HttpClient();
+client.get(theurl, function(response) {
+
+   
+
+});
+
+setTimeout(function(){
+   
+    theurl = 'http://192.168.0.80/arduino/digital/3/0';
+    client.get(theurl, function(response) {
+
+   
+
+});
+
+  },22000);
+
+var serialPort2 = "COM4";
+
+var cmd = "p";
+chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
+
+document.getElementById("indicadorposhusillo").className = "led-green";
+
+chilipeppr.publish(
+    '/com-chilipeppr-elem-flashmsg/flashmsg',
+    "Estado del Husillo",
+    "Husillo en posición de trabajo",
+    4000 /* show for 2 second */
+);
+
+
+//Continúa procedimiento
+
+
+
+
+
+},
+
 
 
                 activarm3: function(evt) {
