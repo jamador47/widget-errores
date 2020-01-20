@@ -4803,6 +4803,287 @@
                     document.getElementById("indicadori21").className = "led-yellow";
                 }
 
+
+
+
+
+
+                // INICIO ERRORES SERVOPACKS
+
+
+
+                // INICIO ERRORES SERVOPACK X
+
+                //326 = Servoalarma, 332= ALO1, 333=ALO2, 334 =ALO3
+
+                // SERVO ALARMA , ALO1, ALO2, ALO3
+                if (obj['I']["326"] == 1) {
+
+
+                    document.getElementById("errorservopack").className = "led-red";
+                    var alarmasexistentes = document.getElementById("textoservo").value;
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack X/gi);
+                    if (existentes == null) {
+                        var erroresexistentes = document.getElementById("textoservo").value;
+                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack X");
+                        document.getElementById("textoservo").value = erroresexistentes;
+                    }
+
+                }
+
+
+                // FIN ERRORES SERVOPACK X
+
+
+
+                //************************************************************************************************
+
+
+
+
+                // INICIO ERRORES SERVOPACK CU1
+
+                //436 = Servoalarma, 431= ALO1, 430=ALO2, 429 =ALO3
+
+                // SERVO ALARMA , ALO1, ALO2, ALO3
+
+                if (obj['I']["436"] == 1) {
+
+
+                    document.getElementById("errorservopack").className = "led-red";
+                    var alarmasexistentes = document.getElementById("textoservo").value;
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack CU1/gi);
+                    if (existentes == null) {
+                        var erroresexistentes = document.getElementById("textoservo").value;
+                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack CU1");
+                        document.getElementById("textoservo").value = erroresexistentes;
+                    }
+
+                }
+                // FIN ERRORES SERVOPACK CU1
+
+
+
+                //************************************************************************************************
+
+
+
+                // INICIO ERRORES SERVOPACK CR1
+
+                //416 = Servoalarma, 412= ALO1, 411=ALO2, 410 =ALO3
+
+                // SERVO ALARMA , ALO1, ALO2, ALO3
+
+
+                if (obj['I']["416"] == 1) {
+
+
+                    document.getElementById("errorservopack").className = "led-red";
+                    var alarmasexistentes = document.getElementById("textoservo").value;
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack CR1/gi);
+                    if (existentes == null) {
+                        var erroresexistentes = document.getElementById("textoservo").value;
+                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack CR1");
+                        document.getElementById("textoservo").value = erroresexistentes;
+                    }
+
+                }
+                // FIN ERRORES SERVOPACK CR1
+
+                //************************************************************************************************
+
+                // INICIO ERRORES SERVOPACK B1
+
+                //407 = Servoalarma, 402= ALO1, 401=ALO2, 400 =ALO3
+
+                // SERVO ALARMA , ALO1, ALO2, ALO3
+
+
+                if (obj['I']["407"] == 1) {
+
+
+                    document.getElementById("errorservopack").className = "led-red";
+                    var alarmasexistentes = document.getElementById("textoservo").value;
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack B1/gi);
+                    if (existentes == null) {
+                        var erroresexistentes = document.getElementById("textoservo").value;
+                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack B1");
+                        document.getElementById("textoservo").value = erroresexistentes;
+                    }
+
+                }
+                // FIN ERRORES SERVOPACK B1
+
+                //************************************************************************************************
+
+
+
+
+                // INICIO ERRORES SERVOPACK Z1
+
+                //397 = Servoalarma, 393= ALO1, 392=ALO2, 391 =ALO3
+
+                // SERVO ALARMA , ALO1, ALO2, ALO3
+
+
+                if (obj['I']["397"] == 1) {
+
+
+                    document.getElementById("errorservopack").className = "led-red";
+                    var alarmasexistentes = document.getElementById("textoservo").value;
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack Z1/gi);
+                    if (existentes == null) {
+                        var erroresexistentes = document.getElementById("textoservo").value;
+                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack Z1");
+                        document.getElementById("textoservo").value = erroresexistentes;
+                    }
+
+                }
+                // FIN ERRORES SERVOPACK Z1
+
+                //************************************************************************************************
+
+                // INICIO ERRORES SERVOPACK W
+
+                //426 = Servoalarma, 421= ALO1, 420=ALO2, 419 =ALO3
+
+                // SERVO ALARMA , ALO1, ALO2, ALO3
+
+
+                if (obj['I']["426"] == 1) {
+
+
+                    document.getElementById("errorservopack").className = "led-red";
+                    var alarmasexistentes = document.getElementById("textoservo").value;
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack W/gi);
+                    if (existentes == null) {
+                        var erroresexistentes = document.getElementById("textoservo").value;
+                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack W");
+                        document.getElementById("textoservo").value = erroresexistentes;
+                    }
+
+                }
+                // FIN ERRORES SERVOPACK W
+
+                //************************************************************************************************
+
+                // INICIO ERRORES SERVOPACK C1
+
+                //389 = Servoalarma, 384= ALO1, 383=ALO2, 382 =ALO3
+
+                // SERVO ALARMA , ALO1, ALO2, ALO3
+
+                if (obj['I']["389"] == 1) {
+
+
+                    document.getElementById("errorservopack").className = "led-red";
+                    var alarmasexistentes = document.getElementById("textoservo").value;
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack C1/gi);
+                    if (existentes == null) {
+                        var erroresexistentes = document.getElementById("textoservo").value;
+                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack C1");
+                        document.getElementById("textoservo").value = erroresexistentes;
+                    }
+
+                }
+                // FIN ERRORES SERVOPACK C1
+
+                //************************************************************************************************
+
+
+
+                // INICIO ERRORES SERVOPACK Z
+
+                //379 = Servoalarma, 375= ALO1, 374=ALO2, 373 =ALO3
+
+                // SERVO ALARMA , ALO1, ALO2, ALO3
+
+                if (obj['I']["379"] == 1) {
+
+
+                    document.getElementById("errorservopack").className = "led-red";
+                    var alarmasexistentes = document.getElementById("textoservo").value;
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack Z/gi);
+                    if (existentes == null) {
+                        var erroresexistentes = document.getElementById("textoservo").value;
+                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack Z");
+                        document.getElementById("textoservo").value = erroresexistentes;
+                    }
+
+                }
+                // FIN ERRORES SERVOPACK Z
+
+                //************************************************************************************************
+
+
+
+
+                // INICIO ERRORES SERVOPACK Y
+
+                //370 = Servoalarma, 365= ALO1, 364=ALO2, 363 =ALO3
+
+                // SERVO ALARMA , ALO1, ALO2, ALO3
+
+                if (obj['I']["370"] == 1) {
+
+
+                    document.getElementById("errorservopack").className = "led-red";
+                    var alarmasexistentes = document.getElementById("textoservo").value;
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack Y/gi);
+                    if (existentes == null) {
+                        var erroresexistentes = document.getElementById("textoservo").value;
+                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack Y");
+                        document.getElementById("textoservo").value = erroresexistentes;
+                    }
+
+                }
+                // FIN ERRORES SERVOPACK Y
+
+                //************************************************************************************************
+
+
+                // INICIO ERRORES SERVOPACK C
+
+                //354 = Servoalarma, 365= ALO1, 364=ALO2, 363 =ALO3
+
+                // SERVO ALARMA , ALO1, ALO2, ALO3
+
+
+                if (obj['I']["354"] == 1) {
+
+
+                    document.getElementById("errorservopack").className = "led-red";
+                    var alarmasexistentes = document.getElementById("textoservo").value;
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack C/gi);
+                    if (existentes == null) {
+                        var erroresexistentes = document.getElementById("textoservo").value;
+                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack C");
+                        document.getElementById("textoservo").value = erroresexistentes;
+                    }
+
+                }
+                // FIN ERRORES SERVOPACK C
+
+                //************************************************************************************************
+
+
+
+                // FIN ERRORES SERVOPACKS
+
+
+
+
+
                 /* 
                   
                           if (obj['I']["326"] == 0){
