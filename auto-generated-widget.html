@@ -4817,7 +4817,7 @@
                 //326 = Servoalarma, 332= ALO1, 333=ALO2, 334 =ALO3
 
                 // SERVO ALARMA , ALO1, ALO2, ALO3
-                if (obj['I']["326"] == 1) {
+                if (obj['I']["326"] == 0) {
 
 
                     document.getElementById("errorservopack").className = "led-red";
@@ -4848,7 +4848,7 @@
 
                 // SERVO ALARMA , ALO1, ALO2, ALO3
 
-                if (obj['I']["436"] == 1) {
+                if (obj['I']["436"] == 0) {
 
 
                     document.getElementById("errorservopack").className = "led-red";
@@ -4877,16 +4877,16 @@
                 // SERVO ALARMA , ALO1, ALO2, ALO3
 
 
-                if (obj['I']["416"] == 1) {
+                if (obj['I']["416"] == 0) {
 
 
                     document.getElementById("errorservopack").className = "led-red";
                     var alarmasexistentes = document.getElementById("textoservo").value;
-                    var existentes = alarmasexistentes.match(/Error presente en el servopack CR1/gi);
+                    var existentes = alarmasexistentes.match(/Error presente en el servopack CN1U1/gi);
                     if (existentes == null) {
                         var erroresexistentes = document.getElementById("textoservo").value;
                         erroresexistentes = erroresexistentes.concat("\\\n\\\n");
-                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack CR1");
+                        erroresexistentes = erroresexistentes.concat("Error presente en el servopack CN1U1");
                         document.getElementById("textoservo").value = erroresexistentes;
                     }
 
@@ -4902,7 +4902,7 @@
                 // SERVO ALARMA , ALO1, ALO2, ALO3
 
 
-                if (obj['I']["407"] == 1) {
+                if (obj['I']["407"] == 0) {
 
 
                     document.getElementById("errorservopack").className = "led-red";
@@ -4930,7 +4930,7 @@
                 // SERVO ALARMA , ALO1, ALO2, ALO3
 
 
-                if (obj['I']["397"] == 1) {
+                if (obj['I']["397"] == 0) {
 
 
                     document.getElementById("errorservopack").className = "led-red";
@@ -4955,7 +4955,7 @@
                 // SERVO ALARMA , ALO1, ALO2, ALO3
 
 
-                if (obj['I']["426"] == 1) {
+                if (obj['I']["426"] == 0) {
 
 
                     document.getElementById("errorservopack").className = "led-red";
@@ -4979,7 +4979,7 @@
 
                 // SERVO ALARMA , ALO1, ALO2, ALO3
 
-                if (obj['I']["389"] == 1) {
+                if (obj['I']["389"] == 0) {
 
 
                     document.getElementById("errorservopack").className = "led-red";
@@ -5005,7 +5005,7 @@
 
                 // SERVO ALARMA , ALO1, ALO2, ALO3
 
-                if (obj['I']["379"] == 1) {
+                if (obj['I']["379"] == 0) {
 
 
                     document.getElementById("errorservopack").className = "led-red";
@@ -5032,7 +5032,7 @@
 
                 // SERVO ALARMA , ALO1, ALO2, ALO3
 
-                if (obj['I']["370"] == 1) {
+                if (obj['I']["370"] == 0) {
 
 
                     document.getElementById("errorservopack").className = "led-red";
@@ -5058,7 +5058,7 @@
                 // SERVO ALARMA , ALO1, ALO2, ALO3
 
 
-                if (obj['I']["354"] == 1) {
+                if (obj['I']["354"] == 0) {
 
 
                     document.getElementById("errorservopack").className = "led-red";
