@@ -4367,7 +4367,7 @@
 
 
 
-                    setTimeout(function() {
+
                     //GETRESET DER + METER MESA DER.
                     if (parseInt(obj["I"]["262"]) == 1 && parseInt(obj["I"]["261"]) == 1) {
                         var HttpClient = function() {
@@ -4408,7 +4408,7 @@
                         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
 
                     }
-                },1500);
+
                 }
 
                 if (obj['estadobotonmesaizq'] == 2) {
@@ -4417,7 +4417,7 @@
 
                     var self = this;
 
-setTimeout(function() {
+
                     if (parseInt(obj['I']["309"]) == 1 && parseInt(obj['I']["310"]) == 1) {
 
                         var HttpClient = function() {
@@ -4462,7 +4462,6 @@ setTimeout(function() {
 
 
                     }
-                },1500);
 
                 }
                 //if (obj['O'][1] == )
