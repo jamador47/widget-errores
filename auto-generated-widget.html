@@ -2422,7 +2422,7 @@
                     });
 
                 } else {
-                    document.getElementById("indicadorerrorejec").className = "led-red";
+                    /*document.getElementById("indicadorerrorejec").className = "led-red";
 
                     var erroresexistentes = document.getElementById("textoerrores").value;
 
@@ -2434,7 +2434,7 @@
 
                     var cmd = "!";
                     chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                    // MESA A NO ESTA EN POSICION DE TRABAJO
+                    // MESA A NO ESTA EN POSICION DE TRABAJO*/
 
                 }
 
@@ -2523,18 +2523,18 @@
                     });
 
                 } else {
+                    /*
+                                        var erroresexistentes = document.getElementById("textoerrores").value;
+                                        document.getElementById("indicadorerrorejec").className = "led-red";
+                                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
-                    var erroresexistentes = document.getElementById("textoerrores").value;
-                    document.getElementById("indicadorerrorejec").className = "led-red";
-                    erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                                        erroresexistentes = erroresexistentes.concat("Mesas se encuentran en modo Gantry, Error de Movimiento");
 
-                    erroresexistentes = erroresexistentes.concat("Mesas se encuentran en modo Gantry, Error de Movimiento");
+                                        document.getElementById("textoerrores").value = erroresexistentes;
 
-                    document.getElementById("textoerrores").value = erroresexistentes;
-
-                    var cmd = "!";
-                    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-                    // MESA A NO ESTA EN POSICION DE TRABAJO
+                                        var cmd = "!";
+                                        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                                        // MESA A NO ESTA EN POSICION DE TRABAJO*/
 
                 }
 
@@ -3974,7 +3974,7 @@
                     response = parseInt(res[1]);
 
                     if (response == 1) {
-                                             // SI SE BLOQUEO
+                        // SI SE BLOQUEO
                         // http://192.168.0.85/arduino/digital/7/0
 
                         // APAGAR LED
@@ -4082,9 +4082,9 @@
                     response = parseInt(res[1]);
 
                     if (response == 1) {
-                        
 
-                         // SI SE BLOQUEO
+
+                        // SI SE BLOQUEO
                         // http://192.168.0.85/arduino/digital/7/0
 
                         // APAGAR LED
@@ -4396,16 +4396,16 @@
                         mesader = 0;
                     } else {
 
-                        var erroresexistentes = document.getElementById("textoerrores").value;
-                        document.getElementById("indicadorerrorejec").className = "led-red";
-                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                        /*   var erroresexistentes = document.getElementById("textoerrores").value;
+                           document.getElementById("indicadorerrorejec").className = "led-red";
+                           erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
-                        erroresexistentes = erroresexistentes.concat("Pines de mesa Derecha no lograron bajar, Error de Movimiento");
+                           erroresexistentes = erroresexistentes.concat("Pines de mesa Derecha no lograron bajar, Error de Movimiento");
 
-                        document.getElementById("textoerrores").value = erroresexistentes;
+                           document.getElementById("textoerrores").value = erroresexistentes;
 
-                        var cmd = "!";
-                        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+                           var cmd = "!";
+                           chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);*/
 
                     }
 
@@ -4446,21 +4446,21 @@
 
                         mesaizq = 0;
                     } else {
+                        /*
 
+                                                var erroresexistentes = document.getElementById("textoerrores").value;
+                                                document.getElementById("indicadorerrorejec").className = "led-red";
 
-                        var erroresexistentes = document.getElementById("textoerrores").value;
-                        document.getElementById("indicadorerrorejec").className = "led-red";
+                                                erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
-                        erroresexistentes = erroresexistentes.concat("\\\n\\\n");
+                                                erroresexistentes = erroresexistentes.concat("Pines de mesa Izquierda no lograron bajar, Error de Movimiento");
 
-                        erroresexistentes = erroresexistentes.concat("Pines de mesa Izquierda no lograron bajar, Error de Movimiento");
+                                                document.getElementById("textoerrores").value = erroresexistentes;
 
-                        document.getElementById("textoerrores").value = erroresexistentes;
+                                                //var cmd = "!";
+                                                //chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
 
-                        //var cmd = "!";
-                        //chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-
-
+                        */
                     }
 
                 }
