@@ -4365,12 +4365,7 @@
 
 
 
-
-
-
-                    //GETRESET DER + METER MESA DER.
-                    if (parseInt(obj["I"]["262"]) == 1 && parseInt(obj["I"]["261"]) == 1) {
-                        var HttpClient = function() {
+                    var HttpClient = function() {
                             this.get = function(aUrl, aCallback) {
                                 var anHttpRequest = new XMLHttpRequest();
                                 anHttpRequest.onreadystatechange = function() {
@@ -4387,6 +4382,11 @@
                         var client = new HttpClient();
                         client.get(theurl, function(response) {});
 
+
+
+                    //GETRESET DER + METER MESA DER.
+                    if (parseInt(obj["I"]["262"]) == 1 && parseInt(obj["I"]["261"]) == 1) {
+                        
                         activarM67();
 
 
@@ -4396,7 +4396,7 @@
                         mesader = 0;
                     } else {
 
-                        /*   var erroresexistentes = document.getElementById("textoerrores").value;
+                           var erroresexistentes = document.getElementById("textoerrores").value;
                            document.getElementById("indicadorerrorejec").className = "led-red";
                            erroresexistentes = erroresexistentes.concat("\\\n\\\n");
 
@@ -4405,7 +4405,7 @@
                            document.getElementById("textoerrores").value = erroresexistentes;
 
                            var cmd = "!";
-                           chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);*/
+                           chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
 
                     }
 
@@ -4416,11 +4416,7 @@
 
 
                     var self = this;
-
-
-                    if (parseInt(obj['I']["309"]) == 1 && parseInt(obj['I']["310"]) == 1) {
-
-                        var HttpClient = function() {
+                    var HttpClient = function() {
                             this.get = function(aUrl, aCallback) {
                                 var anHttpRequest = new XMLHttpRequest();
                                 anHttpRequest.onreadystatechange = function() {
@@ -4436,6 +4432,11 @@
                         var theurl = 'http://192.168.0.98/resetizq';
                         var client = new HttpClient();
                         client.get(theurl, function(response) {});
+
+
+                    if (parseInt(obj['I']["309"]) == 1 && parseInt(obj['I']["310"]) == 1) {
+
+                      
                         //GETRESET IZQ + METER MESA IZQ.
                         activarM68();
 
@@ -4446,7 +4447,7 @@
 
                         mesaizq = 0;
                     } else {
-                        /*
+                        
 
                                                 var erroresexistentes = document.getElementById("textoerrores").value;
                                                 document.getElementById("indicadorerrorejec").className = "led-red";
@@ -4460,7 +4461,7 @@
                                                 //var cmd = "!";
                                                 //chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
 
-                        */
+                        
                     }
 
                 }
@@ -5363,7 +5364,7 @@
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">vG80</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">vG560</span>
 
         </div>
         <div class="panel-body">
