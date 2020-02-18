@@ -4383,9 +4383,11 @@
                         }
 
                         //Arduino 8.
-                        var theurl = 'http://192.168.0.98/resetder';
+                        var theurl = 'http://192.168.0.98/resetder/';
                         var client = new HttpClient();
-                        client.get(theurl, function(response) {});
+                        client.get(theurl, function(response) {
+                            alert("LLEGO");
+                        });
 
                         activarM67();
 
