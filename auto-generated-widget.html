@@ -4382,7 +4382,22 @@
                         var client = new HttpClient();
                         client.get(theurl, function(response) {});
 
-
+setTimeout(function(){
+                        var HttpClient = function() {
+                this.get = function(aUrl, aCallback) {
+                    var anHttpRequest = new XMLHttpRequest();
+                    anHttpRequest.onreadystatechange = function() {
+                        if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                            aCallback(anHttpRequest.responseText);
+                    }
+                    anHttpRequest.open("GET", aUrl, true);
+                    anHttpRequest.send(null);
+                }
+            }
+            var theurl = 'http://192.168.0.98/api/estados';
+            var client = new HttpClient();
+            client.get(theurl, function(response) {
+                var obj = JSON.parse(response);
 
                     //GETRESET DER + METER MESA DER.
                     if (parseInt(obj["I"]["262"]) == 1 && parseInt(obj["I"]["261"]) == 1) {
@@ -4408,7 +4423,8 @@
                            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
 
                     }
-
+            });
+        },2000)
                 }
 
                 if (obj['estadobotonmesaizq'] == 2) {
@@ -4432,8 +4448,24 @@
                         var theurl = 'http://192.168.0.98/resetizq';
                         var client = new HttpClient();
                         client.get(theurl, function(response) {});
+                        
+                        setTimeout(function(){
 
-
+                        var HttpClient = function() {
+                this.get = function(aUrl, aCallback) {
+                    var anHttpRequest = new XMLHttpRequest();
+                    anHttpRequest.onreadystatechange = function() {
+                        if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                            aCallback(anHttpRequest.responseText);
+                    }
+                    anHttpRequest.open("GET", aUrl, true);
+                    anHttpRequest.send(null);
+                }
+            }
+            var theurl = 'http://192.168.0.98/api/estados';
+            var client = new HttpClient();
+            client.get(theurl, function(response) {
+                var obj = JSON.parse(response);
                     if (parseInt(obj['I']["309"]) == 1 && parseInt(obj['I']["310"]) == 1) {
 
                       
@@ -4463,7 +4495,8 @@
 
                         
                     }
-
+            });
+        },2000)
                 }
                 //if (obj['O'][1] == )
                 // if (obj['I']["1"] == )
@@ -5364,7 +5397,7 @@
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">vG560</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">vG860</span>
 
         </div>
         <div class="panel-body">
