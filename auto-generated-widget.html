@@ -4366,11 +4366,9 @@
 
 
 
-setTimeout(function(){
 
                     //GETRESET DER + METER MESA DER.
-                    if (parseInt(obj["I"]["262"]) == 1 && parseInt(obj["I"]["261"]) == 1) {
-                        var HttpClient = function() {
+                    var HttpClient = function() {
                             this.get = function(aUrl, aCallback) {
                                 var anHttpRequest = new XMLHttpRequest();
                                 anHttpRequest.onreadystatechange = function() {
@@ -4388,7 +4386,6 @@ setTimeout(function(){
                         client.get(theurl, function(response) {
                             alert("LLEGO");
                         });
-
                         activarM67();
 
 
@@ -4397,21 +4394,7 @@ setTimeout(function(){
                         // CODIGO A PEGAR   
                         mesader = 0;
 
-                    } else {
-
-                        /*   var erroresexistentes = document.getElementById("textoerrores").value;
-                           document.getElementById("indicadorerrorejec").className = "led-red";
-                           erroresexistentes = erroresexistentes.concat("\\\n\\\n");
-
-                           erroresexistentes = erroresexistentes.concat("Pines de mesa Derecha no lograron bajar, Error de Movimiento");
-
-                           document.getElementById("textoerrores").value = erroresexistentes;
-
-                           var cmd = "!";
-                           chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);*/
-
-                    }
-                },1200)
+      
 
                 }
 
@@ -5367,7 +5350,7 @@ setTimeout(function(){
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">vG802</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">vG902</span>
 
         </div>
         <div class="panel-body">
