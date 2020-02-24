@@ -3298,7 +3298,9 @@
                                     anHttpRequest.send(null);
                                 }
                             }
-
+                            var theurl = 'http://192.168.0.83/arduino/digital/42/0';
+                                    var client = new HttpClient();
+                                    client.get(theurl, function(response) {});
                             // ENCIENDE INTERRUPTOR
                             var theurl = 'http://192.168.0.83/arduino/digital/43/1';
                             var client = new HttpClient();
@@ -5395,7 +5397,7 @@ setTimeout(function(){
                         <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">vG1870</span>
+            </div> <span class="panel-title" data-toggle="popover">ERRORES</span> <span style="font-size:9px;" class="fb-build">vG70</span>
 
         </div>
         <div class="panel-body">
